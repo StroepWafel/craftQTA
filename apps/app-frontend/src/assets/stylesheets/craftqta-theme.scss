@@ -1,12 +1,25 @@
-// craftQTA accent — pleasant blue tuned for light/dark/OLED.
+// craftQTA accent — blue-only success/positive UI: semantic "green" maps to blue scale.
 .light-mode,
 .light {
 	--color-brand: #1d63d8;
 	--color-brand-highlight: rgba(29, 99, 216, 0.2);
 	--color-brand-shadow: rgba(29, 99, 216, 0.45);
 
-	--color-green-highlight: rgba(29, 99, 216, 0.2);
-	--color-green-bg: rgba(29, 99, 216, 0.08);
+	/* Modrinth uses --color-green* for positive states — alias entire ramp to blues */
+	--color-green-50: var(--color-blue-50);
+	--color-green-100: var(--color-blue-100);
+	--color-green-200: var(--color-blue-200);
+	--color-green-300: var(--color-blue-300);
+	--color-green-400: var(--color-blue-400);
+	--color-green-500: var(--color-blue-500);
+	--color-green-600: var(--color-blue-600);
+	--color-green-700: var(--color-blue-700);
+	--color-green-800: var(--color-blue-800);
+	--color-green-900: var(--color-blue-900);
+	--color-green-950: var(--color-blue-950);
+	--color-green: var(--color-blue);
+	--color-green-highlight: var(--color-blue-highlight);
+	--color-green-bg: var(--color-blue-bg);
 
 	--brand-gradient-bg: linear-gradient(
 		0deg,
@@ -36,8 +49,20 @@
 	--color-brand-highlight: rgba(77, 159, 255, 0.28);
 	--color-brand-shadow: rgba(77, 159, 255, 0.48);
 
-	--color-green-highlight: rgba(77, 159, 255, 0.28);
-	--color-green-bg: rgba(77, 159, 255, 0.12);
+	--color-green-50: var(--color-blue-50);
+	--color-green-100: var(--color-blue-100);
+	--color-green-200: var(--color-blue-200);
+	--color-green-300: var(--color-blue-300);
+	--color-green-400: var(--color-blue-400);
+	--color-green-500: var(--color-blue-500);
+	--color-green-600: var(--color-blue-600);
+	--color-green-700: var(--color-blue-700);
+	--color-green-800: var(--color-blue-800);
+	--color-green-900: var(--color-blue-900);
+	--color-green-950: var(--color-blue-950);
+	--color-green: var(--color-blue);
+	--color-green-highlight: var(--color-blue-highlight);
+	--color-green-bg: var(--color-blue-bg);
 
 	--brand-gradient-bg: linear-gradient(
 		0deg,

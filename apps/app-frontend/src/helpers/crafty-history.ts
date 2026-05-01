@@ -21,6 +21,29 @@ const TIME_FIELDS = [
 
 const ROW_ID_KEYS = new Set(['id', '_id'])
 
+/** History fields we never chart (panel / status noise). */
+const CRAFTY_HISTORY_EXCLUDED_METRIC_KEYS = new Set(
+	[
+		'updating',
+		'stats_id',
+		'statsid',
+		'running',
+		'server_port',
+		'serverport',
+		'max',
+		'max_players',
+		'first_run',
+		'firstrun',
+		'importing',
+		'crashed',
+	].map((s) => s.toLowerCase()),
+)
+
+function isExcludedHistoryMetricKey(key: string): boolean {
+	const n = key.toLowerCase().replace(/[\s-]+/g, '_')
+	return CRAFTY_HISTORY_EXCLUDED_METRIC_KEYS.has(n)
+}
+
 /** Envelope unwrap (same spirit as crafty files/schedules helpers). */
 export function craftyUnpackHistoryEnvelope(raw: unknown): unknown {
 	if (raw == null) return null
@@ -71,6 +94,7 @@ function numericCells(row: Record<string, unknown>): Record<string, number> {
 	for (const [k, v] of Object.entries(row)) {
 		if (ROW_ID_KEYS.has(k)) continue
 		if ((TIME_FIELDS as readonly string[]).includes(k)) continue
+		if (isExcludedHistoryMetricKey(k)) continue
 		const n = coerceNumber(v)
 		if (n !== null) nums[k] = n
 	}
@@ -123,25 +147,31 @@ function flattenHistoryRows(inner: unknown): Record<string, unknown>[] {
 	return []
 }
 
-const METRIC_ORDER: string[] = [
-	'cpu',
-	'cpu_percent',
-	'cpu_usage',
-	'mem_percent',
-	'mem_usage_percent',
-	'memory_percent',
-	'players',
-	'online',
-	'max_players',
-	'tps',
-	'mspt',
-]
-
-function orderedMetricKeys(keys: Set<string>): string[] {
-	const pick = METRIC_ORDER.filter((k) => keys.has(k))
-	const rest = [...keys].filter((k) => !METRIC_ORDER.includes(k)).sort()
-	return [...pick, ...rest]
+/** Prefer first column whose key matches (case-insensitive). */
+function buildKeyIndex(allKeys: Set<string>): Map<string, string> {
+	const m = new Map<string, string>()
+	for (const k of allKeys) {
+		m.set(k.toLowerCase(), k)
+	}
+	return m
 }
+
+function pickColumn(keyIndex: Map<string, string>, candidates: string[]): string | null {
+	for (const c of candidates) {
+		const act = keyIndex.get(c.toLowerCase())
+		if (act) return act
+	}
+	return null
+}
+
+/** Match `crafty-stats` heap heuristic: large values = bytes → GB; else treat as MiB → GB. */
+function historyValueToGb(v: number): number {
+	if (!Number.isFinite(v) || v <= 0) return 0
+	if (v >= 104_857_600) return v / 1024 ** 3
+	return v / 1024
+}
+
+const CRAFTY_METRICS_DISPLAY_ORDER = ['players', 'memory_gb', 'cpu_percent', 'mem_percent'] as const
 
 export type CraftyHistorySeries = { metricKey: string; data: number[] }
 
@@ -184,27 +214,75 @@ export function craftyHistoryChartPayload(inner: unknown): CraftyHistoryChartPay
 		Object.keys(merged.get(ms)! || {}).forEach((k) => allKeys.add(k))
 	}
 
-	const metricKeys = orderedMetricKeys(allKeys)
-	const series: CraftyHistorySeries[] = metricKeys.map((metricKey) => ({
-		metricKey,
-		data: labelsMs.map((ms) => merged.get(ms)?.[metricKey] ?? NaN),
-	}))
+	const keyIndex = buildKeyIndex(allKeys)
+	const slices: CraftyHistorySeries[] = []
 
-	const cleanedSeries = series.map((s) => ({
-		metricKey: s.metricKey,
-		data: s.data.map((v) => (Number.isFinite(v) ? v : 0)),
-	}))
+	const playerCol = pickColumn(keyIndex, ['players', 'online'])
+	if (playerCol) {
+		slices.push({
+			metricKey: 'players',
+			data: labelsMs.map((ms) => {
+				const v = merged.get(ms)?.[playerCol]
+				return typeof v === 'number' && Number.isFinite(v) ? v : 0
+			}),
+		})
+	}
+
+	const ramCol = pickColumn(keyIndex, [
+		'mem',
+		'memory',
+		'memory_used',
+		'rss_memory',
+		'heap_used',
+		'ram',
+	])
+	if (ramCol) {
+		slices.push({
+			metricKey: 'memory_gb',
+			data: labelsMs.map((ms) => {
+				const v = merged.get(ms)?.[ramCol]
+				return typeof v === 'number' && Number.isFinite(v) ? historyValueToGb(v) : 0
+			}),
+		})
+	}
+
+	const cpuCol = pickColumn(keyIndex, ['cpu_percent', 'cpu'])
+	if (cpuCol) {
+		slices.push({
+			metricKey: 'cpu_percent',
+			data: labelsMs.map((ms) => {
+				const v = merged.get(ms)?.[cpuCol]
+				return typeof v === 'number' && Number.isFinite(v) ? v : 0
+			}),
+		})
+	}
+
+	const memPctCol = pickColumn(keyIndex, ['memory_percent', 'mem_usage_percent', 'mem_percent'])
+	if (memPctCol) {
+		slices.push({
+			metricKey: 'mem_percent',
+			data: labelsMs.map((ms) => {
+				const v = merged.get(ms)?.[memPctCol]
+				return typeof v === 'number' && Number.isFinite(v) ? v : 0
+			}),
+		})
+	}
+
+	const ordered = CRAFTY_METRICS_DISPLAY_ORDER.map((k) => slices.find((s) => s.metricKey === k)).filter(
+		(x): x is CraftyHistorySeries => Boolean(x),
+	)
 
 	return {
 		labelsMs,
-		series: cleanedSeries.slice(0, 12),
+		series: ordered,
 		sampleCount: labelsMs.length,
-		hasRenderableChart: labelsMs.length >= 2 && cleanedSeries.length > 0,
+		hasRenderableChart: labelsMs.length >= 2 && ordered.length > 0,
 	}
 }
 
 export function craftyMetricLooksPercent(metricKey: string): boolean {
 	const k = metricKey.toLowerCase()
+	if (k === 'memory_gb') return false
 	return (
 		k.includes('percent') ||
 		k.endsWith('_pct') ||

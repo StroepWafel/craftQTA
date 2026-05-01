@@ -287,7 +287,7 @@ const messages = defineMessages({
 								<SignalIcon
 									v-tooltip="serverStatus ? `${serverStatus.ping}ms` : null"
 									aria-hidden="true"
-									:style="`--_signal-${getPingLevel(serverStatus.ping || 0)}: var(--color-green)`"
+									:style="`--_signal-${getPingLevel(serverStatus.ping || 0)}: var(--color-brand)`"
 									stroke-width="3px"
 									class="shrink-0"
 									:class="{

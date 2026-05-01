@@ -145,7 +145,7 @@ const summary = computed(() => {
 function pillClasses(lc: CraftyLifecycle): string {
 	switch (lc) {
 		case 'online':
-			return 'bg-green/15 text-green'
+			return 'bg-blue/15 text-blue'
 		case 'crashed':
 			return 'bg-red/15 text-red'
 		case 'offline':
@@ -420,7 +420,7 @@ function rowIconUrl(s: Crafty.Servers.v2.Server): string | null {
 					<p class="m-0 text-2xl font-bold text-contrast">{{ summary.total }}</p>
 				</div>
 				<div>
-					<p class="m-0 text-xs font-semibold uppercase text-green">{{ t('app.crafty-servers.sum-online') }}</p>
+					<p class="m-0 text-xs font-semibold uppercase text-blue">{{ t('app.crafty-servers.sum-online') }}</p>
 					<p class="m-0 text-xl font-semibold text-contrast">{{ summary.online }}</p>
 				</div>
 				<div>
@@ -506,7 +506,7 @@ function rowIconUrl(s: Crafty.Servers.v2.Server): string | null {
 									<span class="font-semibold text-secondary">CPU</span>
 									<div class="h-2 w-24 overflow-hidden rounded-full bg-secondary-bg">
 										<div
-											class="h-full rounded-full bg-green"
+											class="h-full rounded-full bg-blue"
 											:style="{ width: `${craftyCpuPercent(statFor(serverStableId(s)))}%` }"
 										/>
 									</div>

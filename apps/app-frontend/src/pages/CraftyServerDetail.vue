@@ -400,7 +400,7 @@ function overviewLcLabel(lc: CraftyLifecycle): string {
 function overviewPillClass(lc: CraftyLifecycle): string {
 	switch (lc) {
 		case 'online':
-			return 'bg-green/15 text-green'
+			return 'bg-blue/15 text-blue'
 		case 'crashed':
 			return 'bg-red/15 text-red'
 		case 'offline':
@@ -666,7 +666,7 @@ async function confirmDeleteServer() {
 							<p class="m-0 mt-1 text-2xl font-bold text-contrast">{{ craftyCpuPercent(overviewStatsBag) }}%</p>
 							<div class="mt-2 h-3 overflow-hidden rounded-full bg-secondary-bg">
 								<div
-									class="h-full rounded-full bg-green"
+									class="h-full rounded-full bg-blue"
 									:style="{ width: `${Math.min(100, craftyCpuPercent(overviewStatsBag) ?? 0)}%` }"
 								/>
 							</div>

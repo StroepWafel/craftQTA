@@ -914,10 +914,10 @@
   "app.crafty-servers.no-tasks": { "message": "None yet — schedules you create here will show up automatically." },
   "app.crafty-servers.delete-task-title": { "message": "Delete this task?" },
   "app.crafty-servers.metrics-intro": {
-    "message": "Resource and health samples over time from Crafty (GET …/history). Charts appear when Crafty exposes two or more data points."
+    "message": "Charts use Crafty's history samples (GET …/history): online players, RAM in gigabytes, CPU percent, and memory percent. Extra status columns are omitted on this tab."
   },
   "app.crafty-servers.metrics-chart-empty": {
-    "message": "Charts need at least two history samples with numeric metrics. Let the server run longer and refresh, or check the raw payload below."
+    "message": "Charts need at least two history samples with any of players, RAM, CPU %, or memory %. Let the server run longer and refresh, or check the raw payload below."
   },
   "app.crafty-servers.metrics-series.cpu": { "message": "CPU usage" },
   "app.crafty-servers.metrics-series.cpu_percent": { "message": "CPU %" },
@@ -925,6 +925,8 @@
   "app.crafty-servers.metrics-series.mem_percent": { "message": "Memory %" },
   "app.crafty-servers.metrics-series.mem_usage_percent": { "message": "Memory %" },
   "app.crafty-servers.metrics-series.memory_percent": { "message": "Memory %" },
+  "app.crafty-servers.metrics-series.memory_gb": { "message": "RAM (GB)" },
+  "app.crafty-servers.metrics-suffix-gb": { "message": "GB" },
   "app.crafty-servers.metrics-series.players": { "message": "Players" },
   "app.crafty-servers.metrics-series.online": { "message": "Players online" },
   "app.crafty-servers.metrics-series.max_players": { "message": "Max players" },
