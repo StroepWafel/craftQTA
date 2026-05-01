@@ -211,7 +211,7 @@ async function reinstallJava() {
 }
 
 .test-success {
-	color: var(--color-green);
+	color: var(--color-blue);
 }
 
 .test-fail {

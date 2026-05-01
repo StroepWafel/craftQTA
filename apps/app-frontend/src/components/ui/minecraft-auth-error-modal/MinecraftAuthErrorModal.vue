@@ -175,7 +175,7 @@ async function copyToClipboard(text: string) {
 									:disabled="copied"
 									@click="copyToClipboard(debugInfo)"
 								>
-									<template v-if="copied"> <CheckIcon class="text-green" /> </template>
+									<template v-if="copied"> <CheckIcon class="text-blue" /> </template>
 									<template v-else> <CopyIcon /> </template>
 								</button>
 							</ButtonStyled>

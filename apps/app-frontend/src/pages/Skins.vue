@@ -384,7 +384,7 @@ await Promise.all([loadCapes(), loadSkins(), loadCurrentUser()])
 					>
 						<template #overlay-buttons>
 							<Button
-								color="green"
+								color="blue"
 								aria-label="Edit skin"
 								class="pointer-events-auto"
 								@click.stop="(e: MouseEvent) => editSkinModal?.show(e, skin)"
@@ -435,13 +435,13 @@ await Promise.all([loadCapes(), loadSkins(), loadCurrentUser()])
 				class="absolute -top-28 right-8 md:right-20 h-28 w-auto"
 			/>
 			<div
-				class="absolute top-0 left-0 w-full h-[1px] opacity-40 bg-gradient-to-r from-transparent via-green-500 to-transparent"
+				class="absolute top-0 left-0 w-full h-[1px] opacity-40 bg-gradient-to-r from-transparent via-blue-500 to-transparent"
 				style="
 					background: linear-gradient(
 						to right,
 						transparent 2rem,
-						var(--color-green) calc(100% - 13rem),
-						var(--color-green) calc(100% - 5rem),
+						var(--color-brand) calc(100% - 13rem),
+						var(--color-brand) calc(100% - 5rem),
 						transparent calc(100% - 2rem)
 					);
 				"
