@@ -1,0 +1,90 @@
+# Windows NSIS installer + release .exe without Cargo `updater` or Tauri updater bundles.
+# Local equivalent (from repo root):
+#   pnpm install
+#   pnpm --filter=@modrinth/app run tauri build --bundles nsis
+# Artifacts: apps/app/target/release/bundle/nsis/*-setup.exe (installer), apps/app/target/release/theseus_gui.exe (binary)
+name: App Windows bundle (no updater)
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: app-lib `.env` variant (prod / staging)
+        type: choice
+        options:
+          - prod
+          - staging
+        default: prod
+        required: true
+
+permissions:
+  contents: read
+
+env:
+  VITE_STRIPE_PUBLISHABLE_KEY: pk_live_51JbFxJJygY5LJFfKLVVldb10HlLt24p421OWRsTOWc5sXYFOnFUXWieSc6HD3PHo25ktx8db1WcHr36XGFvZFVUz00V9ixrCs5
+
+jobs:
+  windows:
+    name: Build Windows (NSIS only)
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Rust toolchain
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          rustflags: ''
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Setup Dasel
+        uses: jaxxstorm/action-install-gh-release@v2.1.0
+        with:
+          repo: TomWright/dasel
+          tag: v2.8.1
+          extension-matching: disable
+          rename-to: dasel.exe
+          chmod: 0755
+
+      - name: Set application version and environment
+        shell: bash
+        run: |
+          APP_VERSION="$(git describe --tags --always | sed -E 's/-([0-9]+)-(g[0-9a-fA-F]+)$/-canary+\1.\2/')"
+          BUILD_ENVIRONMENT="${{ inputs.environment }}"
+          echo "Setting application version to $APP_VERSION"
+          echo "Using environment $BUILD_ENVIRONMENT"
+          dasel put -f apps/app/Cargo.toml -t string -v "${APP_VERSION#v}" 'package.version'
+          dasel put -f packages/app-lib/Cargo.toml -t string -v "${APP_VERSION#v}" 'package.version'
+          dasel put -f apps/app-frontend/package.json -t string -v "${APP_VERSION#v}" 'version'
+          cp "packages/app-lib/.env.${BUILD_ENVIRONMENT}" packages/app-lib/.env
+
+      - name: Setup Turbo cache
+        uses: rharkor/caching-for-turbo@v1.8
+
+      - name: Install dependencies
+        run: pnpm install
+
+      # Default tauri.conf.json only — do not merge tauri-release.conf.json (no updater feature / Modrinth updates.json).
+      # Do not pass --bundles updater (see apps/app/README.md).
+      - name: Build Windows app (NSIS installer + exe)
+        run: pnpm --filter=@modrinth/app run tauri build --bundles nsis
+
+      - name: Upload Windows artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-bundle-no-updater
+          if-no-files-found: error
+          path: |
+            apps/app/target/release/bundle/nsis/
+            apps/app/target/release/theseus_gui.exe
