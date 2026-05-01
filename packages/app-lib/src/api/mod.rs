@@ -13,6 +13,7 @@ pub mod process;
 pub mod profile;
 pub mod server_address;
 pub mod settings;
+pub mod shared_world_links;
 pub mod tags;
 pub mod worlds;
 

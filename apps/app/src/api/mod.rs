@@ -17,7 +17,6 @@ pub mod settings;
 pub mod tags;
 pub mod utils;
 
-pub mod ads;
 pub mod cache;
 pub mod files;
 pub mod friends;

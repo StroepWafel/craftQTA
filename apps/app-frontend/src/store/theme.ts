@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 export const DEFAULT_FEATURE_FLAGS = {
 	project_background: false,
 	page_path: false,
-	worlds_tab: false,
+	worlds_tab: true,
 	worlds_in_home: true,
 	server_project_qa: false,
 	server_ram_as_bytes_always_on: false,

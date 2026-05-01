@@ -2,10 +2,10 @@
 	<div class="mx-auto flex w-fit flex-col items-start gap-4 mt-16 max-w-[500px]">
 		<div class="flex flex-col gap-2 w-full">
 			<h2 class="m-0 text-2xl font-semibold text-contrast">
-				{{ formatMessage(messages.welcomeTitle) }}
+				{{ resolvedWelcomeTitle }}
 			</h2>
 			<p class="m-0 text-base text-secondary">
-				{{ formatMessage(messages.welcomeDescription) }}
+				{{ resolvedWelcomeDescription }}
 			</p>
 		</div>
 
@@ -85,11 +85,13 @@ import { useRoute, useRouter } from 'vue-router'
 
 import type { CreationFlowContextValue } from '#ui/components'
 import { CreationFlowModal } from '#ui/components'
+import { injectHostingMarketing } from '#ui/providers/hosting-marketing'
 import { injectModrinthServerContext } from '#ui/providers'
 
 const client = injectModrinthClient()
 const { addNotification } = injectNotificationManager()
 const { formatMessage } = useVIntl()
+const hostingMarketing = injectHostingMarketing()
 
 const messages = defineMessages({
 	welcomeTitle: {
@@ -156,6 +158,17 @@ const messages = defineMessages({
 			"Share your server with friends by copying the address and letting them know which mods they'll need to join.",
 	},
 })
+
+const resolvedWelcomeTitle = computed(
+	() =>
+		hostingMarketing?.onboarding?.welcomeTitle ??
+		formatMessage(messages.welcomeTitle),
+)
+const resolvedWelcomeDescription = computed(
+	() =>
+		hostingMarketing?.onboarding?.welcomeDescription ??
+		formatMessage(messages.welcomeDescription),
+)
 
 async function searchModpacks(query: string, limit: number = 10) {
 	return client.labrinth.projects_v2.search({

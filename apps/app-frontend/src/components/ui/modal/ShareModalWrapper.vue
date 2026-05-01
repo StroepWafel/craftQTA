@@ -10,7 +10,7 @@ defineProps({
 	},
 	shareTitle: {
 		type: String,
-		default: 'Modrinth',
+		default: 'craftQTA',
 	},
 	shareText: {
 		type: String,

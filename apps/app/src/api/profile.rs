@@ -43,6 +43,9 @@ pub fn init<R: tauri::Runtime>() -> tauri::plugin::TauriPlugin<R> {
             profile_edit_icon,
             profile_export_mrpack,
             profile_get_pack_export_candidates,
+            profile_shared_world_link_create,
+            profile_shared_world_link_list,
+            profile_shared_world_link_remove,
         ])
         .build()
 }
@@ -337,6 +340,42 @@ pub async fn profile_get_pack_export_candidates(
 ) -> Result<Vec<SafeRelativeUtf8UnixPathBuf>> {
     let candidates = profile::get_pack_export_candidates(profile_path).await?;
     Ok(candidates)
+}
+
+/// See [`theseus::shared_world_links::list_for_profile`]
+#[tauri::command]
+pub async fn profile_shared_world_link_list(
+    profile_path: String,
+) -> Result<Vec<theseus::shared_world_links::SharedWorldLink>> {
+    Ok(theseus::shared_world_links::list_for_profile(&profile_path).await?)
+}
+
+/// See [`theseus::shared_world_links::create_link`]
+#[tauri::command]
+pub async fn profile_shared_world_link_create(
+    profile_path: String,
+    local_world_folder: String,
+    target_profile_path: String,
+    target_world_folder: String,
+) -> Result<()> {
+    theseus::shared_world_links::create_link(
+        &profile_path,
+        &local_world_folder,
+        &target_profile_path,
+        &target_world_folder,
+    )
+    .await?;
+    Ok(())
+}
+
+/// See [`theseus::shared_world_links::remove_link`]
+#[tauri::command]
+pub async fn profile_shared_world_link_remove(
+    profile_path: String,
+    local_world_folder: String,
+) -> Result<()> {
+    theseus::shared_world_links::remove_link(&profile_path, &local_world_folder).await?;
+    Ok(())
 }
 
 // Run minecraft using a profile using the default credentials

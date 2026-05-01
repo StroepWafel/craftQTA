@@ -5,6 +5,7 @@ import {
 	CodeIcon,
 	CoffeeIcon,
 	InfoIcon,
+	LinkIcon,
 	MonitorIcon,
 	WrenchIcon,
 } from '@modrinth/assets'
@@ -24,6 +25,7 @@ import GeneralSettings from '@/components/ui/instance_settings/GeneralSettings.v
 import HooksSettings from '@/components/ui/instance_settings/HooksSettings.vue'
 import InstallationSettings from '@/components/ui/instance_settings/InstallationSettings.vue'
 import JavaSettings from '@/components/ui/instance_settings/JavaSettings.vue'
+import SharedWorldsSettings from '@/components/ui/instance_settings/SharedWorldsSettings.vue'
 import WindowSettings from '@/components/ui/instance_settings/WindowSettings.vue'
 import { get_project_v3 } from '@/helpers/cache'
 import { get_linked_modpack_info } from '@/helpers/profile'
@@ -102,6 +104,14 @@ const tabs = computed<TabbedModalTab[]>(() => [
 		}),
 		icon: CoffeeIcon,
 		content: JavaSettings,
+	},
+	{
+		name: defineMessage({
+			id: 'instance.settings.tabs.sharedWorlds',
+			defaultMessage: 'Shared worlds',
+		}),
+		icon: LinkIcon,
+		content: SharedWorldsSettings,
 	},
 	{
 		name: defineMessage({

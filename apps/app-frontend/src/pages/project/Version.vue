@@ -40,7 +40,7 @@
 					class="btn"
 				>
 					<ExternalIcon />
-					Modrinth website
+					craftQTA site
 				</a>
 			</div>
 		</Card>

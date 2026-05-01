@@ -165,7 +165,7 @@
     "message": "Gerekli mod paketi"
   },
   "app.modal.install-to-play.server-requires-mods": {
-    "message": "Bu sunucuya girebilmek için modlar gereklidir. Gerekli dosyaları Modrinth üzerinden kurmak için Yükle butonuna tıkla, ardından doğrudan sunucuya başlat."
+    "message": "Bu sunucuya girebilmek için modlar gereklidir. Gerekli dosyaları craftQTA üzerinden kurmak için Yükle butonuna tıkla, ardından doğrudan sunucuya başlat."
   },
   "app.modal.install-to-play.shared-instance": {
     "message": "Paylaşılan Kurulum"
@@ -210,16 +210,16 @@
     "message": "Kaynak yönetimi"
   },
   "app.update-popup.body": {
-    "message": "Modrinth App v{version} güncellemesi indirilmeye hazır! Hemen güncellemek için yeniden başlatın veya Modrinth App’i kapattığınızda otomatik olarak güncellenecek."
+    "message": "craftQTA App v{version} güncellemesi indirilmeye hazır! Hemen güncellemek için yeniden başlatın veya craftQTA App’i kapattığınızda otomatik olarak güncellenecek."
   },
   "app.update-popup.body.download-complete": {
-    "message": "Modrinth App v{version} indirildi. Güncellemek için yeniden başlatın veya Modrinth App’i kapattığınızda otomatik olarak güncellenecek."
+    "message": "craftQTA App v{version} indirildi. Güncellemek için yeniden başlatın veya craftQTA App’i kapattığınızda otomatik olarak güncellenecek."
   },
   "app.update-popup.body.linux": {
-    "message": "Modrinth App v{version} yayımlandı. En yeni özellikler ve hata düzeltmeleri için paket yöneticin üzerinden güncelle!"
+    "message": "craftQTA App v{version} yayımlandı. En yeni özellikler ve hata düzeltmeleri için paket yöneticin üzerinden güncelle!"
   },
   "app.update-popup.body.metered": {
-    "message": "Modrinth App v{version} mevcut! Kısıtlı bağlantıda olduğunuzdan otomatik olarak indirmedik."
+    "message": "craftQTA App v{version} mevcut! Kısıtlı bağlantıda olduğunuzdan otomatik olarak indirmedik."
   },
   "app.update-popup.changelog": {
     "message": "Yama Notları"
@@ -285,10 +285,10 @@
     "message": "Minecraft kullanıcı adıyla aynı olmayabilir!"
   },
   "friends.add-friend.username.placeholder": {
-    "message": "Modrinth kullanıcı adını girin..."
+    "message": "craftQTA kullanıcı adını girin..."
   },
   "friends.add-friend.username.title": {
-    "message": "Arkadaşının Modrinth kullanıcı adı nedir?"
+    "message": "Arkadaşının craftQTA kullanıcı adı nedir?"
   },
   "friends.add-friends-to-share": {
     "message": "<link>Arkadaş ekleyerek</link> ne oynadıklarını gör!"
@@ -330,7 +330,7 @@
     "message": "{title} - {count}"
   },
   "friends.sign-in-to-add-friends": {
-    "message": "Arkadaş eklemek ve ne oynadıklarını görmek için bir <link>Modrinth hesabına giriş yap</link>!"
+    "message": "Arkadaş eklemek ve ne oynadıklarını görmek için bir <link>craftQTA hesabına giriş yap</link>!"
   },
   "instance.add-server.add-and-play": {
     "message": "Ekle ve oyna"

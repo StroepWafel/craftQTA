@@ -165,7 +165,7 @@
     "message": "Yêu cầu modpack"
   },
   "app.modal.install-to-play.server-requires-mods": {
-    "message": "Máy chủ này yêu cầu mod để có thể chơi. Vui lòng ấn vào tải xuống và tải các tệp bắt buộc từ Modrinth và khởi chạy trực tiếp để tham gia máy chủ."
+    "message": "Máy chủ này yêu cầu mod để có thể chơi. Vui lòng ấn vào tải xuống và tải các tệp bắt buộc từ craftQTA và khởi chạy trực tiếp để tham gia máy chủ."
   },
   "app.modal.install-to-play.shared-instance": {
     "message": "Chia sẻ hồ sơ"
@@ -210,16 +210,16 @@
     "message": "Quản lý tài nguyên"
   },
   "app.update-popup.body": {
-    "message": "Phiên bản v{version} của Modrinth đã được chuẩn bị để cài đặt! Khởi động lại ứng dụng để cập nhật ngay bây giờ, hoặc cập nhật tự động khi bạn đóng Modrinth."
+    "message": "Phiên bản v{version} của craftQTA đã được chuẩn bị để cài đặt! Khởi động lại ứng dụng để cập nhật ngay bây giờ, hoặc cập nhật tự động khi bạn đóng craftQTA."
   },
   "app.update-popup.body.download-complete": {
-    "message": "Phiên bản v{version} của Modrinth đã sẵn sàng để có thể cài đặt. Khởi động lại ứng dụng để cập nhật ngay bây giờ, hoặc tự động cập nhật sau khi bạn tắt Modrinth."
+    "message": "Phiên bản v{version} của craftQTA đã sẵn sàng để có thể cài đặt. Khởi động lại ứng dụng để cập nhật ngay bây giờ, hoặc tự động cập nhật sau khi bạn tắt craftQTA."
   },
   "app.update-popup.body.linux": {
-    "message": "Phiên bản v{version} của Modrinth hiện đang khả dụng. Hãy sử dụng trình quản lý gói của bạn để cập nhật các tính năng và bản vá lỗi mới nhất!"
+    "message": "Phiên bản v{version} của craftQTA hiện đang khả dụng. Hãy sử dụng trình quản lý gói của bạn để cập nhật các tính năng và bản vá lỗi mới nhất!"
   },
   "app.update-popup.body.metered": {
-    "message": "Phiên bản v{version} của Modrinth hiện đang khả dụng ngay bây giờ! Vì bạn đang sử dụng mạng có tính phí theo dung lượng nên chúng tôi không tự động tải xuống."
+    "message": "Phiên bản v{version} của craftQTA hiện đang khả dụng ngay bây giờ! Vì bạn đang sử dụng mạng có tính phí theo dung lượng nên chúng tôi không tự động tải xuống."
   },
   "app.update-popup.changelog": {
     "message": "Nhật ký thay đổi"
@@ -285,10 +285,10 @@
     "message": "Nó có thể khác với tên người dùng Minecraft của họ!"
   },
   "friends.add-friend.username.placeholder": {
-    "message": "Nhập tên người dùng Modrinth..."
+    "message": "Nhập tên người dùng craftQTA..."
   },
   "friends.add-friend.username.title": {
-    "message": "Tên người dùng Modrinth của bạn của bạn là gì?"
+    "message": "Tên người dùng craftQTA của bạn của bạn là gì?"
   },
   "friends.add-friends-to-share": {
     "message": "Hãy <link>thêm bạn bè</link> để biết họ đang chơi gì!"
@@ -330,7 +330,7 @@
     "message": "{title} - {count}"
   },
   "friends.sign-in-to-add-friends": {
-    "message": "<link>Đăng nhập bằng tài khoản Modrinth</link> để kết bạn và xem họ đang chơi gì!"
+    "message": "<link>Đăng nhập bằng tài khoản craftQTA</link> để kết bạn và xem họ đang chơi gì!"
   },
   "instance.add-server.add-and-play": {
     "message": "Thêm và chơi"

@@ -9,6 +9,13 @@ use tokio::sync::RwLock;
 use crate::State;
 use crate::state::Profile;
 
+/// Discord application ID for IPC. The game title Discord shows still comes from that app's Portal name;
+/// use `details` / asset text for craftQTA until you register a fork-specific application + assets.
+const DISCORD_RPC_APPLICATION_ID: &str = "1123683254248148992";
+/// Large-image key on the linked Discord app (Modrinth artwork until a fork adds its own app).
+const DISCORD_LARGE_IMAGE_KEY: &str = "modrinth_simple";
+const DISCORD_RICH_PRESENCE_DETAILS: &str = "craftQTA";
+
 pub struct DiscordGuard {
     client: Arc<RwLock<DiscordIpcClient>>,
     connected: Arc<AtomicBool>,
@@ -18,7 +25,7 @@ impl DiscordGuard {
     /// Initialize discord IPC client, and attempt to connect to it
     /// If it fails, it will still return a DiscordGuard, but the client will be unconnected
     pub fn init() -> crate::Result<DiscordGuard> {
-        let dipc = DiscordIpcClient::new("1123683254248148992");
+        let dipc = DiscordIpcClient::new(DISCORD_RPC_APPLICATION_ID);
 
         Ok(DiscordGuard {
             client: Arc::new(RwLock::new(dipc)),
@@ -71,11 +78,14 @@ impl DiscordGuard {
             return Ok(());
         }
 
-        let activity = Activity::new().state(msg).assets(
-            Assets::new()
-                .large_image("modrinth_simple")
-                .large_text("Modrinth Logo"),
-        );
+        let activity = Activity::new()
+            .details(DISCORD_RICH_PRESENCE_DETAILS)
+            .state(msg)
+            .assets(
+                Assets::new()
+                    .large_image(DISCORD_LARGE_IMAGE_KEY)
+                    .large_text(DISCORD_RICH_PRESENCE_DETAILS),
+            );
 
         // Attempt to set the activity
         // If the existing connection fails, attempt to reconnect and try again

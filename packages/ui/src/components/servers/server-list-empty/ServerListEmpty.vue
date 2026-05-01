@@ -5,10 +5,10 @@
 			<!-- Heading -->
 			<div class="flex flex-col gap-2 items-start w-[300px]">
 				<p class="text-3xl leading-9 font-semibold text-contrast">
-					{{ formatMessage(messages.modrinthHostingLabel) }}
+					{{ resolvedHeadline }}
 				</p>
 				<p class="text-base font-normal text-primary">
-					{{ formatMessage(messages.noServersDescription) }}
+					{{ resolvedDescription }}
 				</p>
 			</div>
 
@@ -22,10 +22,10 @@
 					</div>
 					<div class="flex flex-col gap-0.5">
 						<p class="text-base font-semibold text-contrast">
-							{{ formatMessage(messages.oneClickModInstallsTitle) }}
+							{{ resolvedFeatureOneTitle }}
 						</p>
 						<p class="text-base font-normal text-primary">
-							{{ formatMessage(messages.oneClickModInstallsDescription) }}
+							{{ resolvedFeatureOneDescription }}
 						</p>
 					</div>
 				</div>
@@ -38,10 +38,10 @@
 					</div>
 					<div class="flex flex-col gap-0.5">
 						<p class="text-base font-semibold text-contrast">
-							{{ formatMessage(messages.simpleSetupTitle) }}
+							{{ resolvedFeatureTwoTitle }}
 						</p>
 						<p class="text-base font-normal text-primary">
-							{{ formatMessage(messages.simpleSetupDescription) }}
+							{{ resolvedFeatureTwoDescription }}
 						</p>
 					</div>
 				</div>
@@ -54,10 +54,10 @@
 					</div>
 					<div class="flex flex-col gap-0.5">
 						<p class="text-base font-semibold text-contrast">
-							{{ formatMessage(messages.playWithFriendsTitle) }}
+							{{ resolvedFeatureThreeTitle }}
 						</p>
 						<p class="text-base font-normal text-primary">
-							{{ formatMessage(messages.playWithFriendsDescription) }}
+							{{ resolvedFeatureThreeDescription }}
 						</p>
 					</div>
 				</div>
@@ -69,16 +69,17 @@
 					<ButtonStyled color="brand">
 						<button @click="onClickNewServer?.()">
 							<PlusIcon aria-hidden="true" />
-							{{ formatMessage(messages.newServerButton) }}
+							{{ resolvedNewServerButton }}
 						</button>
 					</ButtonStyled>
 
 					<AutoLink
-						to="https://modrinth.com/hosting"
+						v-if="!resolvedHideLearnMore"
+						:to="resolvedLearnMoreHref"
 						target="_blank"
 						class="flex items-center gap-1 hover:brightness-125"
 					>
-						{{ formatMessage(messages.learnMoreLink) }}
+						{{ resolvedLearnMoreLabel }}
 						<RightArrowIcon class="size-5 shrink-0" aria-hidden="true" />
 					</AutoLink>
 				</div>
@@ -88,12 +89,12 @@
 
 					<div class="flex gap-3 items-center flex-wrap">
 						<p class="text-base font-normal text-primary">
-							{{ formatMessage(messages.alreadyHaveServerLabel) }}
+							{{ resolvedAlreadyHaveServer }}
 						</p>
 						<ButtonStyled>
 							<button @click="onClickSignIn?.()">
 								<LogInIcon aria-hidden="true" />
-								{{ formatMessage(messages.signInButton) }}
+								{{ resolvedSignInButton }}
 							</button>
 						</ButtonStyled>
 					</div>
@@ -151,11 +152,14 @@ import {
 	RightArrowIcon,
 	UsersIcon,
 } from '@modrinth/assets'
+import { computed } from 'vue'
+
 import { AutoLink } from '@modrinth/ui'
 
 import ButtonStyled from '#ui/components/base/ButtonStyled.vue'
 
 import { defineMessages, useVIntl } from '../../../composables/i18n'
+import { injectHostingMarketing } from '../../../providers/hosting-marketing'
 import imgAircraft from './grid-images/aircraft.png'
 import imgAlexs from "./grid-images/alex's.png"
 import imgArtifacts from './grid-images/artifacts.png'
@@ -192,6 +196,7 @@ withDefaults(
 const GRID_ROWS = 6
 const GRID_COLS = 5
 const { formatMessage } = useVIntl()
+const hostingMarketing = injectHostingMarketing()
 
 const messages = defineMessages({
 	modrinthHostingLabel: {
@@ -247,6 +252,71 @@ const messages = defineMessages({
 		defaultMessage: 'Sign in',
 	},
 })
+
+const resolvedHeadline = computed(
+	() =>
+		hostingMarketing?.serverListEmpty?.headline ??
+		formatMessage(messages.modrinthHostingLabel),
+)
+const resolvedDescription = computed(
+	() =>
+		hostingMarketing?.serverListEmpty?.description ??
+		formatMessage(messages.noServersDescription),
+)
+const resolvedFeatureOneTitle = computed(
+	() =>
+		hostingMarketing?.serverListEmpty?.featureOneTitle ??
+		formatMessage(messages.oneClickModInstallsTitle),
+)
+const resolvedFeatureOneDescription = computed(
+	() =>
+		hostingMarketing?.serverListEmpty?.featureOneDescription ??
+		formatMessage(messages.oneClickModInstallsDescription),
+)
+const resolvedFeatureTwoTitle = computed(
+	() =>
+		hostingMarketing?.serverListEmpty?.featureTwoTitle ??
+		formatMessage(messages.simpleSetupTitle),
+)
+const resolvedFeatureTwoDescription = computed(
+	() =>
+		hostingMarketing?.serverListEmpty?.featureTwoDescription ??
+		formatMessage(messages.simpleSetupDescription),
+)
+const resolvedFeatureThreeTitle = computed(
+	() =>
+		hostingMarketing?.serverListEmpty?.featureThreeTitle ??
+		formatMessage(messages.playWithFriendsTitle),
+)
+const resolvedFeatureThreeDescription = computed(
+	() =>
+		hostingMarketing?.serverListEmpty?.featureThreeDescription ??
+		formatMessage(messages.playWithFriendsDescription),
+)
+const resolvedNewServerButton = computed(
+	() =>
+		hostingMarketing?.serverListEmpty?.newServerButtonLabel ??
+		formatMessage(messages.newServerButton),
+)
+const resolvedLearnMoreLabel = computed(
+	() =>
+		hostingMarketing?.serverListEmpty?.learnMoreLabel ??
+		formatMessage(messages.learnMoreLink),
+)
+const resolvedLearnMoreHref = computed(
+	() => hostingMarketing?.serverListEmpty?.learnMoreHref ?? 'https://modrinth.com/hosting',
+)
+const resolvedHideLearnMore = computed(() => hostingMarketing?.serverListEmpty?.hideLearnMore === true)
+const resolvedAlreadyHaveServer = computed(
+	() =>
+		hostingMarketing?.serverListEmpty?.alreadyHaveServerLabel ??
+		formatMessage(messages.alreadyHaveServerLabel),
+)
+const resolvedSignInButton = computed(
+	() =>
+		hostingMarketing?.serverListEmpty?.signInButtonLabel ??
+		formatMessage(messages.signInButton),
+)
 
 const GRID_IMAGES = [
 	imgYum1,

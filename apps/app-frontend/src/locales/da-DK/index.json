@@ -102,7 +102,7 @@
     "message": "Modpack krævet"
   },
   "app.modal.install-to-play.server-requires-mods": {
-    "message": "Denne server kræver mods for at spille. Tryk på installer for at sætte de krævet filler fra modrinth op, så lancer direkte til serveren."
+    "message": "Denne server kræver mods for at spille. Tryk på installer for at sætte de krævet filler fra craftQTA op, så lancer direkte til serveren."
   },
   "app.modal.install-to-play.shared-instance": {
     "message": "Delt instance"
@@ -147,16 +147,16 @@
     "message": "Ressourcestyring"
   },
   "app.update-popup.body": {
-    "message": "Modrinth App v{version} er klar til at blive installeret! Genindlæs for at opdatere nu, eller automatisk når du lukker Modrinth App."
+    "message": "craftQTA App v{version} er klar til at blive installeret! Genindlæs for at opdatere nu, eller automatisk når du lukker craftQTA App."
   },
   "app.update-popup.body.download-complete": {
-    "message": "Modrinth App v{version} er færdig med at download. Genindlæs for at opdatere nu, eller automatisk når du lukker Modrinth App."
+    "message": "craftQTA App v{version} er færdig med at download. Genindlæs for at opdatere nu, eller automatisk når du lukker craftQTA App."
   },
   "app.update-popup.body.linux": {
-    "message": "Modrinth App v{version} er nu tilgængelig. Brug din pakke-manager til at opdatere for de nyeste features og fejlrettelser!"
+    "message": "craftQTA App v{version} er nu tilgængelig. Brug din pakke-manager til at opdatere for de nyeste features og fejlrettelser!"
   },
   "app.update-popup.body.metered": {
-    "message": "Modrinth App v{version} er nu tilgængelig! Siden du er på et begrænset netværk, vi downloadede den ikke automatisk."
+    "message": "craftQTA App v{version} er nu tilgængelig! Siden du er på et begrænset netværk, vi downloadede den ikke automatisk."
   },
   "app.update-popup.changelog": {
     "message": "Ændringslog"
@@ -204,10 +204,10 @@
     "message": "Det er muligvis anderledes end deres Minecraft brugernavn!"
   },
   "friends.add-friend.username.placeholder": {
-    "message": "Indskriv Modrinth brugernavn..."
+    "message": "Indskriv craftQTA brugernavn..."
   },
   "friends.add-friend.username.title": {
-    "message": "Hvad er din vens Modrinth brugernavn?"
+    "message": "Hvad er din vens craftQTA brugernavn?"
   },
   "friends.add-friends-to-share": {
     "message": "<link>Tilføj venner</link> for at se hvad de spiller!"
@@ -249,7 +249,7 @@
     "message": "{title} - {count}"
   },
   "friends.sign-in-to-add-friends": {
-    "message": "<link>Log ind på en Modrinth konto</link> for at tilføje venner og se hvad de spiller!"
+    "message": "<link>Log ind på en craftQTA konto</link> for at tilføje venner og se hvad de spiller!"
   },
   "instance.add-server.add-and-play": {
     "message": "Tilføj og spil"

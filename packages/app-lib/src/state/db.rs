@@ -31,7 +31,7 @@ pub(crate) async fn connect(
         .connect_with(conn_options)
         .await?;
 
-    sqlx::migrate!().run(&pool).await?;
+    sqlx::migrate!("./migrations").run(&pool).await?;
 
     if let Err(err) = stale_data_cleanup(&pool).await {
         tracing::warn!(

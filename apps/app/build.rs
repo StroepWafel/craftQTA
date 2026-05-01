@@ -193,6 +193,9 @@ fn main() {
                         "profile_edit_icon",
                         "profile_export_mrpack",
                         "profile_get_pack_export_candidates",
+                        "profile_shared_world_link_create",
+                        "profile_shared_world_link_list",
+                        "profile_shared_world_link_remove",
                     ])
                     .default_permission(
                         DefaultPermissionRule::AllowAllCommands,
@@ -244,22 +247,6 @@ fn main() {
                         "show_launcher_logs_folder",
                         "progress_bars_list",
                         "get_opening_command",
-                    ])
-                    .default_permission(
-                        DefaultPermissionRule::AllowAllCommands,
-                    ),
-            )
-            .plugin(
-                "ads",
-                InlinedPlugin::new()
-                    .commands(&[
-                        "init_ads_window",
-                        "hide_ads_window",
-                        "scroll_ads_window",
-                        "show_ads_window",
-                        "record_ads_click",
-                        "open_link",
-                        "get_ads_personalization",
                     ])
                     .default_permission(
                         DefaultPermissionRule::AllowAllCommands,

@@ -165,7 +165,7 @@
     "message": "Необходимая сборка"
   },
   "app.modal.install-to-play.server-requires-mods": {
-    "message": "Для игры на сервере требуются моды. Установите необходимые файлы с Modrinth, чтобы подключиться."
+    "message": "Для игры на сервере требуются моды. Установите необходимые файлы с craftQTA, чтобы подключиться."
   },
   "app.modal.install-to-play.shared-instance": {
     "message": "Сборка"
@@ -210,16 +210,16 @@
     "message": "Управление ресурсами"
   },
   "app.update-popup.body": {
-    "message": "Версия Modrinth App {version} готова к установке! Перезапустите приложение, чтобы обновить его, или оно обновится автоматически после закрытия."
+    "message": "Версия craftQTA App {version} готова к установке! Перезапустите приложение, чтобы обновить его, или оно обновится автоматически после закрытия."
   },
   "app.update-popup.body.download-complete": {
-    "message": "Скачивание версии Modrinth App {version} завершено. Перезапустите приложение, чтобы обновить его, или оно обновится автоматически после закрытия."
+    "message": "Скачивание версии craftQTA App {version} завершено. Перезапустите приложение, чтобы обновить его, или оно обновится автоматически после закрытия."
   },
   "app.update-popup.body.linux": {
-    "message": "Доступна версия Modrinth App {version}. Обновите приложение через менеджер пакетов, чтобы получить последние улучшения и исправления!"
+    "message": "Доступна версия craftQTA App {version}. Обновите приложение через менеджер пакетов, чтобы получить последние улучшения и исправления!"
   },
   "app.update-popup.body.metered": {
-    "message": "Версия Modrinth App {version} доступна для скачивания! Используется сеть с лимитным тарифным планом, поэтому скачивание не началось автоматически."
+    "message": "Версия craftQTA App {version} доступна для скачивания! Используется сеть с лимитным тарифным планом, поэтому скачивание не началось автоматически."
   },
   "app.update-popup.changelog": {
     "message": "Список изменений"
@@ -285,10 +285,10 @@
     "message": "Оно может быть не таким, как в Minecraft!"
   },
   "friends.add-friend.username.placeholder": {
-    "message": "Введите имя с Modrinth..."
+    "message": "Введите имя с craftQTA..."
   },
   "friends.add-friend.username.title": {
-    "message": "Какое имя у друга на Modrinth?"
+    "message": "Какое имя у друга на craftQTA?"
   },
   "friends.add-friends-to-share": {
     "message": "<link>Добавьте друзей</link> и следите за ними!"
@@ -330,7 +330,7 @@
     "message": "{title} — {count}"
   },
   "friends.sign-in-to-add-friends": {
-    "message": "<link>Войдите в аккаунт Modrinth</link>, чтобы добавлять друзей и следить за ними!"
+    "message": "<link>Войдите в аккаунт craftQTA</link>, чтобы добавлять друзей и следить за ними!"
   },
   "instance.add-server.add-and-play": {
     "message": "Добавить и играть"

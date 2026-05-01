@@ -5,6 +5,7 @@ import {
 	EyeIcon,
 	FolderOpenIcon,
 	IssuesIcon,
+	LinkIcon,
 	MoreVerticalIcon,
 	NoSignalIcon,
 	PlayIcon,
@@ -64,6 +65,7 @@ const router = useRouter()
 const emit = defineEmits<{
 	(e: 'play' | 'play-instance' | 'update' | 'stop' | 'refresh' | 'edit' | 'delete'): void
 	(e: 'open-folder', world: SingleplayerWorld): void
+	(e: 'share-to-instance', world: SingleplayerWorld): void
 }>()
 
 const props = withDefaults(
@@ -94,6 +96,9 @@ const props = withDefaults(
 		instancePath?: string
 		instanceName?: string
 		instanceIcon?: string
+
+		/** When set, single-player worlds can be linked into another instance */
+		instanceProfilePath?: string
 	}>(),
 	{
 		playingInstance: false,
@@ -113,6 +118,8 @@ const props = withDefaults(
 		instancePath: undefined,
 		instanceName: undefined,
 		instanceIcon: undefined,
+
+		instanceProfilePath: undefined,
 	},
 )
 
@@ -188,6 +195,10 @@ const messages = defineMessages({
 	linkedServer: {
 		id: 'instance.worlds.linked_server',
 		defaultMessage: 'Managed by server project',
+	},
+	shareToInstance: {
+		id: 'instance.worlds.share_to_instance',
+		defaultMessage: 'Share to another instance…',
 	},
 	incompatibleVersion: {
 		id: 'app.world.world-item.incompatible-version',
@@ -456,6 +467,16 @@ const messages = defineMessages({
 								action: () => (world.type === 'singleplayer' ? emit('open-folder', world) : {}),
 							},
 							{
+								id: 'share-to-instance',
+								shown:
+									world.type === 'singleplayer' &&
+									!!instanceProfilePath &&
+									!locked &&
+									!managed,
+								action: () =>
+									world.type === 'singleplayer' ? emit('share-to-instance', world) : undefined,
+							},
+							{
 								divider: true,
 								shown: !!instancePath,
 							},
@@ -508,6 +529,10 @@ const messages = defineMessages({
 						<template #open-folder>
 							<FolderOpenIcon aria-hidden="true" />
 							{{ formatMessage(commonMessages.openFolderButton) }}
+						</template>
+						<template #share-to-instance>
+							<LinkIcon aria-hidden="true" />
+							{{ formatMessage(messages.shareToInstance) }}
 						</template>
 						<template #copy-address>
 							<ClipboardCopyIcon aria-hidden="true" />

@@ -271,6 +271,43 @@ export async function get_pack_export_candidates(profilePath: string): Promise<s
 	return await invoke('plugin:profile|profile_get_pack_export_candidates', { profilePath })
 }
 
+export type ProfileSharedWorldLink = {
+	local_world_folder: string
+	target_profile_path: string
+	target_world_folder: string
+	created: number
+}
+
+export async function profile_shared_world_link_list(
+	profilePath: string,
+): Promise<ProfileSharedWorldLink[]> {
+	return await invoke('plugin:profile|profile_shared_world_link_list', { profilePath })
+}
+
+export async function profile_shared_world_link_create(
+	profilePath: string,
+	localWorldFolder: string,
+	targetProfilePath: string,
+	targetWorldFolder: string,
+): Promise<void> {
+	return await invoke('plugin:profile|profile_shared_world_link_create', {
+		profilePath,
+		localWorldFolder,
+		targetProfilePath,
+		targetWorldFolder,
+	})
+}
+
+export async function profile_shared_world_link_remove(
+	profilePath: string,
+	localWorldFolder: string,
+): Promise<void> {
+	return await invoke('plugin:profile|profile_shared_world_link_remove', {
+		profilePath,
+		localWorldFolder,
+	})
+}
+
 // Run Minecraft using a pathed profile
 // Returns PID of child
 export async function run(path: string, serverAddress: string | null = null): Promise<unknown> {

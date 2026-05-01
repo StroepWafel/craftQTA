@@ -165,7 +165,7 @@
     "message": "需求整合包"
   },
   "app.modal.install-to-play.server-requires-mods": {
-    "message": "此服务器需要安装模组才能游玩。点击安装，从 Modrinth 下载所需文件，然后直接进入服务器。"
+    "message": "此服务器需要安装模组才能游玩。点击安装，从 craftQTA 下载所需文件，然后直接进入服务器。"
   },
   "app.modal.install-to-play.shared-instance": {
     "message": "共享实例"
@@ -210,16 +210,16 @@
     "message": "资源管理"
   },
   "app.update-popup.body": {
-    "message": "Modrinth App v{version} 更新已就绪！立即重启更新，或退出时自动安装。"
+    "message": "craftQTA App v{version} 更新已就绪！立即重启更新，或退出时自动安装。"
   },
   "app.update-popup.body.download-complete": {
-    "message": "Modrinth App v{version} 更新已下载完成！立即重启更新，或退出时自动安装。"
+    "message": "craftQTA App v{version} 更新已下载完成！立即重启更新，或退出时自动安装。"
   },
   "app.update-popup.body.linux": {
-    "message": "Modrinth App v{version} 现已发布。请使用你的软件包管理器进行更新，获取最新功能与修复！"
+    "message": "craftQTA App v{version} 现已发布。请使用你的软件包管理器进行更新，获取最新功能与修复！"
   },
   "app.update-popup.body.metered": {
-    "message": "Modrinth App v{version} 现已发布！由于你正在使用按流量计费的网络，该更新未自动下载。"
+    "message": "craftQTA App v{version} 现已发布！由于你正在使用按流量计费的网络，该更新未自动下载。"
   },
   "app.update-popup.changelog": {
     "message": "更新日志"
@@ -285,10 +285,10 @@
     "message": "这可能与对方的 Minecraft 用户名不同！"
   },
   "friends.add-friend.username.placeholder": {
-    "message": "输入 Modrinth 用户名……"
+    "message": "输入 craftQTA 用户名……"
   },
   "friends.add-friend.username.title": {
-    "message": "你好友的 Modrinth 用户名是什么？"
+    "message": "你好友的 craftQTA 用户名是什么？"
   },
   "friends.add-friends-to-share": {
     "message": "<link>添加好友</link> 来看看他们都在玩什么！"
@@ -330,7 +330,7 @@
     "message": "{title} - {count}"
   },
   "friends.sign-in-to-add-friends": {
-    "message": "登录你的 <link>Modrinth 账号</link>，添加好友，看看他们在玩什么！"
+    "message": "登录你的 <link>craftQTA 账号</link>，添加好友，看看他们在玩什么！"
   },
   "instance.add-server.add-and-play": {
     "message": "添加并游玩"

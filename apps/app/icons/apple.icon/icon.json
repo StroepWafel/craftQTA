@@ -1,8 +1,8 @@
 {
 	"fill": {
 		"linear-gradient": [
-			"display-p3:0.18127,0.41301,0.28212,1.00000",
-			"display-p3:0.09652,0.20392,0.15411,1.00000"
+			"display-p3:0.45127,0.08101,0.16212,1.00000",
+			"display-p3:0.09652,0.09652,0.09652,1.00000"
 		]
 	},
 	"groups": [
@@ -20,8 +20,8 @@
 						{
 							"value": {
 								"linear-gradient": [
-									"display-p3:0.49491,0.92226,0.57293,1.00000",
-									"display-p3:0.10588,0.85098,0.41569,1.00000"
+									"display-p3:0.89491,0.32226,0.47293,1.00000",
+									"display-p3:0.70588,0.15098,0.31569,1.00000"
 								]
 							}
 						},
@@ -31,8 +31,8 @@
 						}
 					],
 					"glass": true,
-					"image-name": "Modrinth logo.svg",
-					"name": "Modrinth logo",
+					"image-name": "Craftqta logo.svg",
+					"name": "Craftqta logo",
 					"opacity-specializations": [
 						{
 							"appearance": "tinted",

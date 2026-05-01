@@ -27,3 +27,15 @@ pnpm app:dev
 ```
 
 You should now have a development build of the app running with hot-reloading enabled. Any changes you make to the code will automatically refresh the app.
+
+### Windows installer without Modrinth auto-updater
+
+Official Modrinth release builds merge `tauri-release.conf.json`, which enables the Cargo `updater` feature and the Modrinth `updates.json` endpoint. To produce a **local NSIS installer and `.exe`** that does **not** use that updater pipeline, build with the **default** [`tauri.conf.json`](./tauri.conf.json) only (do **not** pass `--config tauri-release.conf.json`):
+
+```bash
+pnpm install
+cd apps/app
+pnpm exec tauri build --bundles nsis
+```
+
+Artifacts usually appear under `apps/app/target/release/bundle/nsis/` (installer) and `apps/app/target/release/` (binary). Prerequisites: Rust, pnpm, MSVC + Windows SDK, and WebView2 — see [Tauri Windows prerequisites](https://v2.tauri.app/start/prerequisites/).

@@ -7,6 +7,7 @@ import { ArchonOptionsV1Module } from './archon/options/v1'
 import { ArchonPropertiesV1Module } from './archon/properties/v1'
 import { ArchonServersV0Module } from './archon/servers/v0'
 import { ArchonServersV1Module } from './archon/servers/v1'
+import { CraftyV2Module } from './crafty/v2'
 import { ISO3166Module } from './iso3166'
 import { KyrosContentV1Module } from './kyros/content/v1'
 import { KyrosFilesV0Module } from './kyros/files/v0'
@@ -63,6 +64,7 @@ export const MODULE_REGISTRY = {
 	archon_properties_v1: ArchonPropertiesV1Module,
 	archon_servers_v0: ArchonServersV0Module,
 	archon_servers_v1: ArchonServersV1Module,
+	crafty_v2: CraftyV2Module,
 	iso3166_data: ISO3166Module,
 	mclogs_insights_v1: MclogsInsightsV1Module,
 	mclogs_logs_v1: MclogsLogsV1Module,

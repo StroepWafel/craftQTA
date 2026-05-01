@@ -9,7 +9,6 @@ import {
 	VerboseLoggingFeature,
 } from '@modrinth/api-client'
 import {
-	ArrowBigUpDashIcon,
 	ChangeSkinIcon,
 	CompassIcon,
 	DownloadIcon,
@@ -50,6 +49,7 @@ import {
 	provideNotificationManager,
 	providePageContext,
 	providePopupNotificationManager,
+	provideHostingMarketing,
 	useDebugLogger,
 	useVIntl,
 } from '@modrinth/ui'
@@ -66,7 +66,7 @@ import { $fetch } from 'ofetch'
 import { computed, onMounted, onUnmounted, provide, ref, watch } from 'vue'
 import { RouterView, useRoute, useRouter } from 'vue-router'
 
-import ModrinthAppLogo from '@/assets/modrinth_app.svg?component'
+import CraftqtaWordmark from '@/components/ui/CraftqtaWordmark.vue'
 import AccountsCard from '@/components/ui/AccountsCard.vue'
 import AppActionBar from '@/components/ui/AppActionBar.vue'
 import Breadcrumbs from '@/components/ui/Breadcrumbs.vue'
@@ -82,14 +82,16 @@ import InstallToPlayModal from '@/components/ui/modal/InstallToPlayModal.vue'
 import ModpackAlreadyInstalledModal from '@/components/ui/modal/ModpackAlreadyInstalledModal.vue'
 import UpdateToPlayModal from '@/components/ui/modal/UpdateToPlayModal.vue'
 import NavButton from '@/components/ui/NavButton.vue'
-import PromotionWrapper from '@/components/ui/PromotionWrapper.vue'
 import QuickInstanceSwitcher from '@/components/ui/QuickInstanceSwitcher.vue'
 import SplashScreen from '@/components/ui/SplashScreen.vue'
 import WindowControls from '@/components/ui/WindowControls.vue'
 import { useIntercomPositioning } from '@/composables/intercom-positioning'
 import { useCheckDisableMouseover } from '@/composables/macCssFix.js'
+import { branding } from '@/branding'
 import { config } from '@/config'
-import { hide_ads_window, init_ads_window, show_ads_window } from '@/helpers/ads.js'
+import { craftyApiBaseOverride } from '@/helpers/crafty-endpoints'
+import { craftyJwt } from '@/helpers/crafty-session'
+import { hostingMarketingContext } from '@/hosting-marketing'
 import { debugAnalytics, initAnalytics, trackEvent } from '@/helpers/analytics'
 import { check_reachable } from '@/helpers/auth.js'
 import { get_user, get_version } from '@/helpers/cache.js'
@@ -118,6 +120,7 @@ import { setupProviders } from '@/providers/setup'
 import { setupAuthProvider } from '@/providers/setup/auth'
 import { setupLoadingStateProvider } from '@/providers/setup/loading-state'
 import { useError } from '@/store/error.js'
+import { DEFAULT_FEATURE_FLAGS } from '@/store/theme.ts'
 import { useTheming } from '@/store/state'
 
 import { generateSkinPreviews } from './helpers/rendering/batch-skin-renderer'
@@ -150,6 +153,9 @@ const tauriApiClient = new TauriModrinthClient({
 	userAgent: `modrinth/theseus/${getVersion()} (support@modrinth.com)`,
 	labrinthBaseUrl: config.labrinthBaseUrl,
 	archonBaseUrl: config.archonBaseUrl,
+	craftyBaseUrl: config.craftyBaseUrl,
+	getCraftyAuthorization: () =>
+		craftyJwt.value ? `Bearer ${craftyJwt.value}` : undefined,
 	features: [
 		new NodeAuthFeature({
 			getAuth: () => nodeAuthState.getAuth?.() ?? null,
@@ -178,10 +184,9 @@ providePageContext({
 	},
 	openExternalUrl: (url) => openUrl(url),
 })
+provideHostingMarketing(hostingMarketingContext)
 provideModalBehavior({
 	noblur: computed(() => !themeStore.advancedRendering),
-	onShow: () => hide_ads_window(),
-	onHide: () => show_ads_window(),
 })
 
 const {
@@ -332,7 +337,7 @@ async function setupApp() {
 	themeStore.advancedRendering = advanced_rendering
 	themeStore.toggleSidebar = toggle_sidebar
 	themeStore.devMode = developer_mode
-	themeStore.featureFlags = feature_flags
+	themeStore.featureFlags = { ...DEFAULT_FEATURE_FLAGS, ...feature_flags }
 	stateInitialized.value = true
 
 	isMaximized.value = await getCurrentWindow().isMaximized()
@@ -496,6 +501,20 @@ function onSuspenseResolve() {
 
 const queryClient = useQueryClient()
 
+const craftyApiEffective = computed(() => {
+	const o = craftyApiBaseOverride.value.trim().replace(/\/$/, '')
+	return o || config.craftyBaseUrl
+})
+
+watch(
+	craftyApiEffective,
+	(url) => {
+		tauriApiClient.patchConfig({ craftyBaseUrl: url })
+		queryClient.invalidateQueries({ queryKey: ['crafty'] })
+	},
+	{ immediate: true },
+)
+
 watch(stateInitialized, (ready) => {
 	if (ready) {
 		if (initialLoadToken) {
@@ -646,17 +665,6 @@ async function logOut() {
 	await fetchCredentials()
 }
 
-const MIDAS_BITFLAG = 1 << 0
-const hasPlus = computed(
-	() =>
-		credentials.value &&
-		credentials.value.user &&
-		(credentials.value.user.badges & MIDAS_BITFLAG) === MIDAS_BITFLAG,
-)
-
-const showAd = computed(
-	() => sidebarVisible.value && !hasPlus.value && credentials.value !== undefined,
-)
 const hostingRouteActive = computed(() => route.path.startsWith('/hosting'))
 
 let intercomBooting = false
@@ -749,14 +757,6 @@ watch(
 	{ immediate: true },
 )
 
-watch(showAd, () => {
-	if (!showAd.value) {
-		hide_ads_window(true)
-	} else {
-		init_ads_window(true)
-	}
-})
-
 onMounted(() => {
 	invoke('show_window')
 
@@ -836,20 +836,20 @@ const updatePopupMessages = defineMessages({
 	body: {
 		id: 'app.update-popup.body',
 		defaultMessage:
-			'Modrinth App v{version} is ready to install! Reload to update now, or automatically when you close Modrinth App.',
+			`${branding.productName} v{version} is ready to install! Reload to update now, or automatically when you close ${branding.productName}.`,
 	},
 	meteredBody: {
 		id: 'app.update-popup.body.metered',
-		defaultMessage: `Modrinth App v{version} is available now! Since you're on a metered network, we didn't automatically download it.`,
+		defaultMessage: `${branding.productName} v{version} is available now! Since you're on a metered network, we didn't automatically download it.`,
 	},
 	downloadedBody: {
 		id: 'app.update-popup.body.download-complete',
-		defaultMessage: `Modrinth App v{version} has finished downloading. Reload to update now, or automatically when you close Modrinth App.`,
+		defaultMessage: `${branding.productName} v{version} has finished downloading. Reload to update now, or automatically when you close ${branding.productName}.`,
 	},
 	linuxBody: {
 		id: 'app.update-popup.body.linux',
 		defaultMessage:
-			'Modrinth App v{version} is available. Use your package manager to update for the latest features and fixes!',
+			`${branding.productName} v{version} is available. Use your package manager to update for the latest features and fixes!`,
 	},
 	reload: {
 		id: 'app.update-popup.reload',
@@ -1095,24 +1095,20 @@ async function openSurvey() {
 		onOpen: () => console.info('Opened user survey'),
 		onClose: () => {
 			console.info('Closed user survey')
-			show_ads_window()
 		},
 		onSubmit: () => console.info('Active user survey submitted'),
 	}
 
 	try {
-		hide_ads_window()
 		if (window.Tally?.openPopup) {
 			console.info(`Opening Tally popup for user survey (form ID: ${formId})`)
 			dismissSurvey()
 			window.Tally.openPopup(formId, popupOptions)
 		} else {
 			console.warn('Tally script not yet loaded')
-			show_ads_window()
 		}
 	} catch (e) {
 		console.error('Error opening Tally popup:', e)
-		show_ads_window()
 	}
 
 	console.info(`Found user survey to show with tally_id: ${formId}`)
@@ -1245,7 +1241,7 @@ provideAppUpdateDownloadProgress(appUpdateDownload)
 				<LibraryIcon />
 			</NavButton>
 			<NavButton
-				v-tooltip.right="'Modrinth Hosting'"
+				v-tooltip.right="'craftQTA Servers'"
 				to="/hosting/manage"
 				:is-primary="(r) => r.path === '/hosting/manage' || r.path === '/hosting/manage/'"
 				:is-subpage="(r) => r.path.startsWith('/hosting/manage/') && r.path !== '/hosting/manage/'"
@@ -1299,7 +1295,7 @@ provideAppUpdateDownloadProgress(appUpdateDownload)
 			</NavButton>
 			<OverflowMenu
 				v-if="credentials?.user"
-				v-tooltip.right="`Modrinth account`"
+				v-tooltip.right="`craftQTA account`"
 				class="w-12 h-12 text-primary rounded-full flex items-center justify-center text-2xl transition-all bg-transparent hover:bg-button-bg hover:text-contrast border-0 cursor-pointer"
 				:options="[
 					{
@@ -1328,13 +1324,13 @@ provideAppUpdateDownloadProgress(appUpdateDownload)
 				</template>
 				<template #sign-out> <LogOutIcon /> Sign out </template>
 			</OverflowMenu>
-			<NavButton v-else v-tooltip.right="'Sign in to a Modrinth account'" :to="() => signIn()">
+			<NavButton v-else v-tooltip.right="'Sign in to a craftQTA account'" :to="() => signIn()">
 				<LogInIcon class="text-brand" />
 			</NavButton>
 		</div>
 		<div data-tauri-drag-region class="app-grid-statusbar bg-bg-raised h-[--top-bar-height] flex">
 			<div data-tauri-drag-region class="flex min-w-0 flex-1 overflow-hidden p-3">
-				<ModrinthAppLogo class="h-full w-auto shrink-0 text-contrast pointer-events-none" />
+				<CraftqtaWordmark class="h-full w-auto shrink-0 text-contrast pointer-events-none" />
 				<div data-tauri-drag-region class="flex shrink-0 items-center gap-1 ml-3">
 					<button
 						class="cursor-pointer p-0 m-0 text-contrast border-none outline-none bg-button-bg rounded-full flex items-center justify-center w-6 h-6 hover:brightness-75 transition-all"
@@ -1388,12 +1384,12 @@ provideAppUpdateDownloadProgress(appUpdateDownload)
 					v-if="availableSurvey"
 					class="w-[400px] z-20 fixed -bottom-12 pb-16 right-[--right-bar-width] mr-4 rounded-t-2xl card-shadow bg-bg-raised border-surface-5 border-[1px] border-solid border-b-0 p-4"
 				>
-					<h2 class="text-lg font-extrabold mt-0 mb-2">Hey there Modrinth user!</h2>
+					<h2 class="text-lg font-extrabold mt-0 mb-2">Hey there craftQTA user!</h2>
 					<p class="m-0 leading-tight">
-						Would you mind answering a few questions about your experience with Modrinth App?
+						Would you mind answering a few questions about your experience with craftQTA App?
 					</p>
 					<p class="mt-3 mb-4 leading-tight">
-						This feedback will go directly to the Modrinth team and help guide future updates!
+						This feedback will go directly to the craftQTA team and help guide future updates!
 					</p>
 					<div class="flex gap-2">
 						<ButtonStyled color="brand">
@@ -1457,12 +1453,10 @@ provideAppUpdateDownloadProgress(appUpdateDownload)
 		</div>
 		<div
 			class="app-sidebar mt-px shrink-0 flex flex-col border-0 border-l-[1px] border-[--brand-gradient-border] border-solid"
-			:class="{ 'has-plus': hasPlus }"
 		>
 			<div
 				v-overlay-scrollbars="sidebarOverlayScrollbarsOptions"
 				class="app-sidebar-scrollable flex-grow shrink relative"
-				:class="{ 'pb-12': !hasPlus }"
 				data-overlayscrollbars-initialize
 			>
 				<div id="sidebar-teleport-target" class="sidebar-teleport-content"></div>
@@ -1495,16 +1489,6 @@ provideAppUpdateDownloadProgress(appUpdateDownload)
 					</div>
 				</div>
 			</div>
-			<template v-if="showAd">
-				<a
-					href="https://modrinth.plus?app"
-					class="absolute bottom-[250px] w-full flex justify-center items-center gap-1 px-4 py-3 text-purple font-medium hover:underline z-10"
-					target="_blank"
-				>
-					<ArrowBigUpDashIcon class="text-2xl" /> Upgrade to Modrinth+
-				</a>
-				<PromotionWrapper />
-			</template>
 		</div>
 	</div>
 	<I18nDebugPanel />
@@ -1612,21 +1596,6 @@ provideAppUpdateDownloadProgress(appUpdateDownload)
 	--color-button-bg-hover: var(--brand-gradient-border);
 	--color-divider: var(--brand-gradient-border);
 	--color-divider-dark: var(--brand-gradient-border);
-}
-
-.app-sidebar::after {
-	content: '';
-	position: absolute;
-	bottom: 250px;
-	left: 0;
-	right: 0;
-	height: 5rem;
-	background: var(--brand-gradient-fade-out-color);
-	pointer-events: none;
-}
-
-.app-sidebar.has-plus::after {
-	display: none;
 }
 
 .disable-advanced-rendering {

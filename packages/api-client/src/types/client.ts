@@ -64,6 +64,19 @@ export interface ClientConfig {
 	archonSentryCapture?: boolean | (() => boolean)
 
 	/**
+	 * Crafty Controller API origin (no trailing slash). Requests use `{craftyBaseUrl}/api/v2/...`.
+	 */
+	craftyBaseUrl?: string
+
+	/**
+	 * Bearer token for Crafty (`Bearer …`). Usually reads from app storage each request.
+	 */
+	getCraftyAuthorization?: () =>
+		| string
+		| undefined
+		| Promise<string | undefined>
+
+	/**
 	 * Features to enable for this client
 	 * Features are applied in the order they appear in this array
 	 */

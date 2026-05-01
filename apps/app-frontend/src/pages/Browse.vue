@@ -1084,7 +1084,7 @@ provideBrowseManager({
 		<BrowsePageLayout>
 			<template #after>
 				<ContextMenu ref="contextMenuRef" @option-clicked="handleOptionsClick">
-					<template #open_link> <GlobeIcon /> Open in Modrinth <ExternalIcon /> </template>
+					<template #open_link> <GlobeIcon /> Open in craftQTA <ExternalIcon /> </template>
 					<template #copy_link> <ClipboardCopyIcon /> Copy link </template>
 				</ContextMenu>
 			</template>

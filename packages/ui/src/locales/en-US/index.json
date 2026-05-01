@@ -3201,7 +3201,7 @@
     "defaultMessage": "Upload in progress"
   },
   "servers.manage.contact-support-button": {
-    "defaultMessage": "Contact Modrinth Support"
+    "defaultMessage": "Contact craftQTA Support"
   },
   "servers.manage.error.alert-notice": {
     "defaultMessage": "Our systems automatically alert our team when there's an issue. We are already working on getting them back online."
@@ -3213,10 +3213,10 @@
     "defaultMessage": "Error details:"
   },
   "servers.manage.error.queue-notice": {
-    "defaultMessage": "If you recently purchased your Modrinth Hosting server, it is currently in a queue and will appear here as soon as it's ready. <warning>Do not attempt to purchase a new server.</warning>"
+    "defaultMessage": "If you recently purchased a craftQTA server, it is currently in a queue and will appear here as soon as it's ready. <warning>Do not attempt to purchase a new server.</warning>"
   },
   "servers.manage.error.support-notice": {
-    "defaultMessage": "If you require personalized support regarding the status of your server, please contact Modrinth Support."
+    "defaultMessage": "If you require personalized support regarding the status of your server, please contact craftQTA Support."
   },
   "servers.manage.error.title": {
     "defaultMessage": "Servers could not be loaded"
@@ -3240,7 +3240,7 @@
     "defaultMessage": "Reload"
   },
   "servers.manage.resubscribe-error.text": {
-    "defaultMessage": "An error occurred while resubscribing to your Modrinth server."
+    "defaultMessage": "An error occurred while resubscribing to your craftQTA server."
   },
   "servers.manage.resubscribe-error.title": {
     "defaultMessage": "Error resubscribing"
@@ -3261,7 +3261,7 @@
     "defaultMessage": "Search {count} {count, plural, one {server} other {servers}}..."
   },
   "servers.manage.servers-title": {
-    "defaultMessage": "Modrinth Hosting"
+    "defaultMessage": "craftQTA Servers"
   },
   "servers.manage.settings-hint.description": {
     "defaultMessage": "They can now be found here!"

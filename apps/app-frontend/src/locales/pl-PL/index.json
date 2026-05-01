@@ -165,7 +165,7 @@
     "message": "Wymagana paczka modów"
   },
   "app.modal.install-to-play.server-requires-mods": {
-    "message": "Ten serwer wymaga modów, aby na nim grać. Kliknij \"Zainstaluj\" aby otrzymać potrzebne pliki z Modrinth, a potem dołącz bezpośrednio do serwera."
+    "message": "Ten serwer wymaga modów, aby na nim grać. Kliknij \"Zainstaluj\" aby otrzymać potrzebne pliki z craftQTA, a potem dołącz bezpośrednio do serwera."
   },
   "app.modal.install-to-play.shared-instance": {
     "message": "Wspólna instancja"
@@ -210,16 +210,16 @@
     "message": "Zarządzanie zasobami"
   },
   "app.update-popup.body": {
-    "message": "Wersja Modrinth App v{version} jest gotowa do zainstalowania! Załaduj ponownie, żeby zaktualizować teraz, albo automatycznie, gdy zamkniesz Modrinth App."
+    "message": "Wersja craftQTA App v{version} jest gotowa do zainstalowania! Załaduj ponownie, żeby zaktualizować teraz, albo automatycznie, gdy zamkniesz craftQTA App."
   },
   "app.update-popup.body.download-complete": {
-    "message": "Wersja Modrinth App v{version} została pobrana. Załaduj ponownie, żeby zaktualizować teraz, albo automatycznie, gdy zamkniesz Modrinth App."
+    "message": "Wersja craftQTA App v{version} została pobrana. Załaduj ponownie, żeby zaktualizować teraz, albo automatycznie, gdy zamkniesz craftQTA App."
   },
   "app.update-popup.body.linux": {
-    "message": "Wersja Modrinth App v{version} jest dostępna. Pobierz aktualizację poprzez menedżer pakietów, by uzyskać najnowsze funkcje i poprawki!"
+    "message": "Wersja craftQTA App v{version} jest dostępna. Pobierz aktualizację poprzez menedżer pakietów, by uzyskać najnowsze funkcje i poprawki!"
   },
   "app.update-popup.body.metered": {
-    "message": "Wersja Modrinth App v{version} jest dostępna! Skoro korzystasz z sieci taryfowej, nie pobraliśmy jej automatycznie."
+    "message": "Wersja craftQTA App v{version} jest dostępna! Skoro korzystasz z sieci taryfowej, nie pobraliśmy jej automatycznie."
   },
   "app.update-popup.changelog": {
     "message": "Dziennik zmian"
@@ -285,7 +285,7 @@
     "message": "Może różnić się od nazwy użytkownika Minecraft!"
   },
   "friends.add-friend.username.placeholder": {
-    "message": "Wprowadź nazwę użytkownika Modrinth..."
+    "message": "Wprowadź nazwę użytkownika craftQTA..."
   },
   "friends.add-friend.username.title": {
     "message": "Jaka jest nazwa użytkownika Twojego znajomego?"
@@ -330,7 +330,7 @@
     "message": "{title} - {count}"
   },
   "friends.sign-in-to-add-friends": {
-    "message": "<link>Zaloguj się na konto Modrinth</link> by dodać znajomych i widzieć, w co grają!"
+    "message": "<link>Zaloguj się na konto craftQTA</link> by dodać znajomych i widzieć, w co grają!"
   },
   "instance.add-server.add-and-play": {
     "message": "Dodaj i graj"

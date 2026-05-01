@@ -165,7 +165,7 @@
     "message": "所需模組包"
   },
   "app.modal.install-to-play.server-requires-mods": {
-    "message": "這個伺服器需要模組才能遊玩。請點選「安裝」以從 Modrinth 設定所需的檔案，完成後即可直接加入伺服器。"
+    "message": "這個伺服器需要模組才能遊玩。請點選「安裝」以從 craftQTA 設定所需的檔案，完成後即可直接加入伺服器。"
   },
   "app.modal.install-to-play.shared-instance": {
     "message": "共用實例"
@@ -210,16 +210,16 @@
     "message": "資源管理"
   },
   "app.update-popup.body": {
-    "message": "Modrinth App v{version} 已準備好安裝！立即重新載入以更新，或在關閉 Modrinth App 時自動更新。"
+    "message": "craftQTA App v{version} 已準備好安裝！立即重新載入以更新，或在關閉 craftQTA App 時自動更新。"
   },
   "app.update-popup.body.download-complete": {
-    "message": "Modrinth App v{version} 已完成下載！立即重新載入以更新，或在關閉 Modrinth App 時自動更新。"
+    "message": "craftQTA App v{version} 已完成下載！立即重新載入以更新，或在關閉 craftQTA App 時自動更新。"
   },
   "app.update-popup.body.linux": {
-    "message": "Modrinth App v{version} 現已推出。請使用軟體包管理員進行更新，以取得最新的功能與修正！"
+    "message": "craftQTA App v{version} 現已推出。請使用軟體包管理員進行更新，以取得最新的功能與修正！"
   },
   "app.update-popup.body.metered": {
-    "message": "Modrinth App v{version} 現已推出！由於你目前使用的是計量付費網路，我們並未自動下載更新。"
+    "message": "craftQTA App v{version} 現已推出！由於你目前使用的是計量付費網路，我們並未自動下載更新。"
   },
   "app.update-popup.changelog": {
     "message": "更新日誌"
@@ -285,10 +285,10 @@
     "message": "這可能與對方的 Minecraft 使用者名稱不同！"
   },
   "friends.add-friend.username.placeholder": {
-    "message": "輸入 Modrinth 使用者名稱..."
+    "message": "輸入 craftQTA 使用者名稱..."
   },
   "friends.add-friend.username.title": {
-    "message": "你好友的 Modrinth 使用者名稱是什麼？"
+    "message": "你好友的 craftQTA 使用者名稱是什麼？"
   },
   "friends.add-friends-to-share": {
     "message": "<link>新增好友</link>即可查看他們正在玩什麼！"
@@ -330,7 +330,7 @@
     "message": "{title} - {count}"
   },
   "friends.sign-in-to-add-friends": {
-    "message": "<link>登入 Modrinth 帳號</link>即可新增好友並查看他們正在玩什麼！"
+    "message": "<link>登入 craftQTA 帳號</link>即可新增好友並查看他們正在玩什麼！"
   },
   "instance.add-server.add-and-play": {
     "message": "新增並遊玩"

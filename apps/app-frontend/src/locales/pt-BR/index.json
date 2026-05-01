@@ -165,7 +165,7 @@
     "message": "Pacote de mods necessário"
   },
   "app.modal.install-to-play.server-requires-mods": {
-    "message": "Este servidor requer mods para jogar. Clique em Instalar para configurar os arquivos necessários a partir do Modrinth, e iniciar diretamente no servidor."
+    "message": "Este servidor requer mods para jogar. Clique em Instalar para configurar os arquivos necessários a partir do craftQTA, e iniciar diretamente no servidor."
   },
   "app.modal.install-to-play.shared-instance": {
     "message": "Instância compartilhada"
@@ -210,16 +210,16 @@
     "message": "Gerenciamento de recursos"
   },
   "app.update-popup.body": {
-    "message": "O Modrinth App v{version} está pronto para ser instalado! Você pode recarregar para atualizar agora ou a atualização será feita automaticamente ao fechar o Modrinth App."
+    "message": "O craftQTA App v{version} está pronto para ser instalado! Você pode recarregar para atualizar agora ou a atualização será feita automaticamente ao fechar o craftQTA App."
   },
   "app.update-popup.body.download-complete": {
-    "message": "O Modrinth App v{version} foi baixado. Recarregue para atualizar agora ou a atualização será aplicada automaticamente ao fechar o Modrinth App."
+    "message": "O craftQTA App v{version} foi baixado. Recarregue para atualizar agora ou a atualização será aplicada automaticamente ao fechar o craftQTA App."
   },
   "app.update-popup.body.linux": {
-    "message": "O Modrinth App v{version} está disponível. Use seu gerenciador de pacotes para atualizar e obter os recursos e correções mais recentes!"
+    "message": "O craftQTA App v{version} está disponível. Use seu gerenciador de pacotes para atualizar e obter os recursos e correções mais recentes!"
   },
   "app.update-popup.body.metered": {
-    "message": "O Modrinth App v{version} já está disponível! Como você está em uma rede limitada, não o baixamos automaticamente."
+    "message": "O craftQTA App v{version} já está disponível! Como você está em uma rede limitada, não o baixamos automaticamente."
   },
   "app.update-popup.changelog": {
     "message": "Mudanças"
@@ -288,7 +288,7 @@
     "message": "Insira o nome de usuário..."
   },
   "friends.add-friend.username.title": {
-    "message": "Qual o nome de usuário do seu amigo no Modrinth?"
+    "message": "Qual o nome de usuário do seu amigo no craftQTA?"
   },
   "friends.add-friends-to-share": {
     "message": "<link>Adicione amigos</link> para ver o que eles estão jogando!"
@@ -330,7 +330,7 @@
     "message": "{title} - {count}"
   },
   "friends.sign-in-to-add-friends": {
-    "message": "<link>Inicie uma sessão com o Modrinth</link> para adicionar amigos e ver o que eles estão jogando!"
+    "message": "<link>Inicie uma sessão com o craftQTA</link> para adicionar amigos e ver o que eles estão jogando!"
   },
   "instance.add-server.add-and-play": {
     "message": "Adicionar e jogar"

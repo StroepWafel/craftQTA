@@ -39,6 +39,7 @@ export abstract class AbstractModrinthClient extends AbstractUploadClient {
 	public readonly launchermeta!: InferredClientModules['launchermeta']
 	public readonly paper!: InferredClientModules['paper']
 	public readonly purpur!: InferredClientModules['purpur']
+	public readonly crafty!: InferredClientModules['crafty']
 
 	constructor(config: ClientConfig) {
 		super()
@@ -46,6 +47,7 @@ export abstract class AbstractModrinthClient extends AbstractUploadClient {
 			timeout: 10000,
 			labrinthBaseUrl: 'https://api.modrinth.com',
 			archonBaseUrl: 'https://archon.modrinth.com',
+			craftyBaseUrl: 'https://crafty.stroepwafel.au',
 			...config,
 		}
 		this.features = config.features ?? []
@@ -437,5 +439,12 @@ export abstract class AbstractModrinthClient extends AbstractUploadClient {
 	 */
 	getFeatures(): AbstractFeature[] {
 		return [...this.features]
+	}
+
+	/**
+	 * Merge partial runtime config (e.g. user-defined Crafty API origin).
+	 */
+	patchConfig(patch: Partial<ClientConfig>): void {
+		Object.assign(this.config, patch)
 	}
 }

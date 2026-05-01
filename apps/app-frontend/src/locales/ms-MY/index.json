@@ -165,7 +165,7 @@
     "message": "Pek mod yang diperlukan"
   },
   "app.modal.install-to-play.server-requires-mods": {
-    "message": "Pelayan ini memerlukan mod untuk dimainkan. Klik Pasang untuk menyediakan fail yang diperlukan daripada Modrinth, kemudian lancarkan permainan terus ke dalam pelayan."
+    "message": "Pelayan ini memerlukan mod untuk dimainkan. Klik Pasang untuk menyediakan fail yang diperlukan daripada craftQTA, kemudian lancarkan permainan terus ke dalam pelayan."
   },
   "app.modal.install-to-play.shared-instance": {
     "message": "Pemasangan yang dikongsi"
@@ -210,16 +210,16 @@
     "message": "Pengurusan sumber"
   },
   "app.update-popup.body": {
-    "message": "Modrinth App v{version} sudah bersedia untuk dipasang! Muat semula untuk kemas kini sekarang, atau kemas kini secara automatik apabila anda menutup Modrinth App."
+    "message": "craftQTA App v{version} sudah bersedia untuk dipasang! Muat semula untuk kemas kini sekarang, atau kemas kini secara automatik apabila anda menutup craftQTA App."
   },
   "app.update-popup.body.download-complete": {
-    "message": "Modrinth App v{version} sudah selesai dimuat turun! Muat semula untuk kemas kini sekarang, atau kemas kini secara automatik apabila anda menutup Modrinth App."
+    "message": "craftQTA App v{version} sudah selesai dimuat turun! Muat semula untuk kemas kini sekarang, atau kemas kini secara automatik apabila anda menutup craftQTA App."
   },
   "app.update-popup.body.linux": {
-    "message": "Modrinth App v{version} tersedia. Gunakan pengurus pakej anda untuk mengemas kini dan mendapatkan ciri-ciri dan pembetulan terkini!"
+    "message": "craftQTA App v{version} tersedia. Gunakan pengurus pakej anda untuk mengemas kini dan mendapatkan ciri-ciri dan pembetulan terkini!"
   },
   "app.update-popup.body.metered": {
-    "message": "Modrinth App v{version} kini tersedia! Memandangkan anda sedang menggunakan rangkaian bermeter, kami tidak memuat turunnya secara automatik."
+    "message": "craftQTA App v{version} kini tersedia! Memandangkan anda sedang menggunakan rangkaian bermeter, kami tidak memuat turunnya secara automatik."
   },
   "app.update-popup.changelog": {
     "message": "Log perubahan"
@@ -285,10 +285,10 @@
     "message": "Ia mungkin berbeza daripada nama pengguna Minecraft mereka!"
   },
   "friends.add-friend.username.placeholder": {
-    "message": "Masukkan nama pengguna Modrinth..."
+    "message": "Masukkan nama pengguna craftQTA..."
   },
   "friends.add-friend.username.title": {
-    "message": "Apakah nama pengguna Modrinth rakan anda?"
+    "message": "Apakah nama pengguna craftQTA rakan anda?"
   },
   "friends.add-friends-to-share": {
     "message": "<link>Tambah rakan</link> untuk melihat apa yang mereka mainkan!"
@@ -330,7 +330,7 @@
     "message": "{title} - {count}"
   },
   "friends.sign-in-to-add-friends": {
-    "message": "<link>Log masuk ke akaun Modrinth</link> untuk menambah rakan dan melihat apa yang mereka mainkan!"
+    "message": "<link>Log masuk ke akaun craftQTA</link> untuk menambah rakan dan melihat apa yang mereka mainkan!"
   },
   "instance.add-server.add-and-play": {
     "message": "Tambah dan main"

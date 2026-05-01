@@ -13,6 +13,7 @@
 	/>
 	<EditServerModal ref="editServerModal" :instance="instance" @submit="editServer" />
 	<EditWorldModal ref="editWorldModal" :instance="instance" @submit="editWorld" />
+	<ShareWorldToInstanceModal ref="shareWorldModal" />
 	<ConfirmModalWrapper
 		ref="removeServerModal"
 		:title="
@@ -117,6 +118,7 @@
 						world.type === 'server' ? serverData[world.address]?.renderedMotd : undefined
 					"
 					:game-mode="world.type === 'singleplayer' ? GAME_MODES[world.game_mode] : undefined"
+					:instance-profile-path="instance.path"
 					@play="() => joinWorld(world)"
 					@stop="() => emit('stop')"
 					@refresh="() => refreshServer((world as ServerWorld).address)"
@@ -130,6 +132,7 @@
 					"
 					@delete="() => !isManagedServerWorld(world) && promptToRemoveWorld(world)"
 					@open-folder="(world: SingleplayerWorld) => showWorldInFolder(instance.path, world.path)"
+					@share-to-instance="openShareWorld"
 				/>
 			</div>
 		</div>
@@ -186,6 +189,7 @@ import ConfirmModalWrapper from '@/components/ui/modal/ConfirmModalWrapper.vue'
 import AddServerModal from '@/components/ui/world/modal/AddServerModal.vue'
 import EditServerModal from '@/components/ui/world/modal/EditServerModal.vue'
 import EditWorldModal from '@/components/ui/world/modal/EditSingleplayerWorldModal.vue'
+import ShareWorldToInstanceModal from '@/components/ui/world/modal/ShareWorldToInstanceModal.vue'
 import WorldItem from '@/components/ui/world/WorldItem.vue'
 import { trackEvent } from '@/helpers/analytics'
 import { get_project, get_project_v3 } from '@/helpers/cache.js'
@@ -297,6 +301,7 @@ const router = useRouter()
 const addServerModal = ref<InstanceType<typeof AddServerModal>>()
 const editServerModal = ref<InstanceType<typeof EditServerModal>>()
 const editWorldModal = ref<InstanceType<typeof EditWorldModal>>()
+const shareWorldModal = ref<InstanceType<typeof ShareWorldToInstanceModal>>()
 const removeServerModal = ref<InstanceType<typeof ConfirmModalWrapper>>()
 const deleteWorldModal = ref<InstanceType<typeof ConfirmModalWrapper>>()
 
@@ -542,6 +547,14 @@ async function removeServer(server: ServerWorld) {
 			w.index = serverIdx++
 		}
 	}
+}
+
+function openShareWorld(world: SingleplayerWorld) {
+	shareWorldModal.value?.open({
+		sourceProfilePath: instance.value.path,
+		sourceWorldFolder: world.path,
+		sourceProfileName: instance.value.name,
+	})
 }
 
 async function editWorld(path: string, name: string, removeIcon: boolean) {

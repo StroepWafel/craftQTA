@@ -165,7 +165,7 @@
     "message": "Szükséges modcsomag"
   },
   "app.modal.install-to-play.server-requires-mods": {
-    "message": "Ehhez a szerverhez modok szükségesek a játékhoz. Kattints a Telepítés gombra, hogy telepítsd a szükséges fájlokat a Modrinth-ról, majd indítsd el közvetlenül a szervert."
+    "message": "Ehhez a szerverhez modok szükségesek a játékhoz. Kattints a Telepítés gombra, hogy telepítsd a szükséges fájlokat a craftQTA-ról, majd indítsd el közvetlenül a szervert."
   },
   "app.modal.install-to-play.shared-instance": {
     "message": "Megosztott profil"
@@ -210,16 +210,16 @@
     "message": "Erőforráskezelés"
   },
   "app.update-popup.body": {
-    "message": "A Modrinth App v{version} telepítésre kész! Frissítéshez Töltsd újra az oldalt, vagy a Modrinth App bezárásakor automatikusan frissül."
+    "message": "A craftQTA App v{version} telepítésre kész! Frissítéshez Töltsd újra az oldalt, vagy a craftQTA App bezárásakor automatikusan frissül."
   },
   "app.update-popup.body.download-complete": {
-    "message": "A Modrinth App v{version} letöltése befejeződött. Frissítéshez Töltsd újra az oldalt, vagy a Modrinth App bezárásakor automatikusan frissül."
+    "message": "A craftQTA App v{version} letöltése befejeződött. Frissítéshez Töltsd újra az oldalt, vagy a craftQTA App bezárásakor automatikusan frissül."
   },
   "app.update-popup.body.linux": {
-    "message": "A Modrinth App v{version} elérhető. Használd a csomagkezelőt a legújabb funkciók és javítások frissítéséhez!"
+    "message": "A craftQTA App v{version} elérhető. Használd a csomagkezelőt a legújabb funkciók és javítások frissítéséhez!"
   },
   "app.update-popup.body.metered": {
-    "message": "A Modrinth App v{version} már elérhető! Mivel mérhető hálózaton vagy, nem töltöttük le automatikusan."
+    "message": "A craftQTA App v{version} már elérhető! Mivel mérhető hálózaton vagy, nem töltöttük le automatikusan."
   },
   "app.update-popup.changelog": {
     "message": "Változásnapló"
@@ -285,10 +285,10 @@
     "message": "Más is lehet, mint a Minecraft felhasználóneve!"
   },
   "friends.add-friend.username.placeholder": {
-    "message": "Barát Modrinth felhasználóneve..."
+    "message": "Barát craftQTA felhasználóneve..."
   },
   "friends.add-friend.username.title": {
-    "message": "Mi a barátod Modrinth felhasználóneve?"
+    "message": "Mi a barátod craftQTA felhasználóneve?"
   },
   "friends.add-friends-to-share": {
     "message": "<link>Vegyél fel barátokat</link>, hogy lásd mivel játszanak!"
@@ -330,7 +330,7 @@
     "message": "{title} - {count}"
   },
   "friends.sign-in-to-add-friends": {
-    "message": "<link>Lépj be Modrinth fiókodba</link>, hogy felvehess barátokat és lásd mivel játszanak!"
+    "message": "<link>Lépj be craftQTA fiókodba</link>, hogy felvehess barátokat és lásd mivel játszanak!"
   },
   "instance.add-server.add-and-play": {
     "message": "Hozzáadás és csatlakozás"

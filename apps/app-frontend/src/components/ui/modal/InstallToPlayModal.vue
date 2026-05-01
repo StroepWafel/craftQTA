@@ -87,7 +87,6 @@ import {
 } from '@modrinth/ui'
 import { computed, ref } from 'vue'
 
-import { hide_ads_window, show_ads_window } from '@/helpers/ads'
 import { get_project, get_project_many, get_version, get_version_many } from '@/helpers/cache.js'
 import { injectServerInstall } from '@/providers/server-install'
 
@@ -221,13 +220,11 @@ async function show(
 
 	if (modpackVersionIdVal) await fetchData(modpackVersionIdVal)
 
-	hide_ads_window()
 	modal.value?.show(e)
 }
 
 function hide() {
 	modal.value?.hide()
-	show_ads_window()
 }
 
 const messages = defineMessages({
@@ -246,7 +243,7 @@ const messages = defineMessages({
 	serverRequiresMods: {
 		id: 'app.modal.install-to-play.server-requires-mods',
 		defaultMessage:
-			'This server requires mods to play. Click Install to set up the required files from Modrinth, then launch directly into the server.',
+			'This server requires mods to play. Click Install to set up the required files from craftQTA, then launch directly into the server.',
 	},
 	requiredModpack: {
 		id: 'app.modal.install-to-play.required-modpack',

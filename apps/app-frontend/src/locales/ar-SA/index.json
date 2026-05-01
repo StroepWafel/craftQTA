@@ -165,7 +165,7 @@
     "message": "حزمة التعديل مطلوبة"
   },
   "app.modal.install-to-play.server-requires-mods": {
-    "message": "يتطلب هذا الخادم تعديلات للعب. انقر فوق \"تثبيت\" لإعداد الملفات المطلوبة من Modrinth، ثم قم بتشغيله مباشرة إلى الخادم."
+    "message": "يتطلب هذا الخادم تعديلات للعب. انقر فوق \"تثبيت\" لإعداد الملفات المطلوبة من craftQTA، ثم قم بتشغيله مباشرة إلى الخادم."
   },
   "app.modal.install-to-play.shared-instance": {
     "message": "النماذج المشتركة"
@@ -210,16 +210,16 @@
     "message": "إدارة الموارد"
   },
   "app.update-popup.body": {
-    "message": "تطبيق Modrinth v{version} جاهز للتثبيت! أعد التحميل للتحديث الآن، أو تلقائيًا عند إغلاق تطبيق Modrinth."
+    "message": "تطبيق craftQTA v{version} جاهز للتثبيت! أعد التحميل للتحديث الآن، أو تلقائيًا عند إغلاق تطبيق craftQTA."
   },
   "app.update-popup.body.download-complete": {
-    "message": "انتهى تنزيل تطبيق Modrinth v{version}. أعد التحميل للتحديث الآن، أو تلقائيًا عند إغلاق تطبيق Modrinth."
+    "message": "انتهى تنزيل تطبيق craftQTA v{version}. أعد التحميل للتحديث الآن، أو تلقائيًا عند إغلاق تطبيق craftQTA."
   },
   "app.update-popup.body.linux": {
-    "message": "تطبيق Modrinth v {version} متاح. استخدم مدير الحزم الخاص بك للتحديث للحصول على أحدث الميزات والإصلاحات!"
+    "message": "تطبيق craftQTA v {version} متاح. استخدم مدير الحزم الخاص بك للتحديث للحصول على أحدث الميزات والإصلاحات!"
   },
   "app.update-popup.body.metered": {
-    "message": "تطبيق Modrinth v{version} متاح الآن! وبما أنك متصل بشبكة مقيّدة، لم نقم بتنزيله تلقائيًا."
+    "message": "تطبيق craftQTA v{version} متاح الآن! وبما أنك متصل بشبكة مقيّدة، لم نقم بتنزيله تلقائيًا."
   },
   "app.update-popup.changelog": {
     "message": "سجل التغيير"
@@ -285,10 +285,10 @@
     "message": "قد يختلف عن اسم المستخدم الخاص بهم في ماينكرافت!"
   },
   "friends.add-friend.username.placeholder": {
-    "message": "أدخل اسم مستخدم Modrinth..."
+    "message": "أدخل اسم مستخدم craftQTA..."
   },
   "friends.add-friend.username.title": {
-    "message": "ما اسم مستخدم صديقك في Modrinth؟"
+    "message": "ما اسم مستخدم صديقك في craftQTA؟"
   },
   "friends.add-friends-to-share": {
     "message": "<link>أضف أصدقاء</link> لمعرفة ما الذي يلعبونه!"
@@ -330,7 +330,7 @@
     "message": "{title} - {count}"
   },
   "friends.sign-in-to-add-friends": {
-    "message": "<link>سجّل الدخول إلى حساب Modrinth</link> لإضافة الأصدقاء ومعرفة ما الذي يلعبونه!"
+    "message": "<link>سجّل الدخول إلى حساب craftQTA</link> لإضافة الأصدقاء ومعرفة ما الذي يلعبونه!"
   },
   "instance.add-server.add-and-play": {
     "message": "إضافة واللعب"

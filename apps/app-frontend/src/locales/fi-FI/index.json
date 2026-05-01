@@ -162,7 +162,7 @@
     "message": "Vaadittu modipaketti"
   },
   "app.modal.install-to-play.server-requires-mods": {
-    "message": "Tämä palvelin vaatii modeja toimiakseen. Klikkaa Asenna ladataksesi vaaditut tiedostot Modrinthista, ja käynnistä peli suoraan palvelimelle."
+    "message": "Tämä palvelin vaatii modeja toimiakseen. Klikkaa Asenna ladataksesi vaaditut tiedostot craftQTAsta, ja käynnistä peli suoraan palvelimelle."
   },
   "app.modal.install-to-play.shared-instance": {
     "message": "Jaettu instanssi"
@@ -207,16 +207,16 @@
     "message": "Resurssien hallinta"
   },
   "app.update-popup.body": {
-    "message": "Modrinth App versio {version} on valmis asennettavaksi. Voit käynnistää sovelluksen uudelleen päivittääksesi heti tai antaa päivityksen asentua automaattisesti, kun suljet Modrinth Appin."
+    "message": "craftQTA App versio {version} on valmis asennettavaksi. Voit käynnistää sovelluksen uudelleen päivittääksesi heti tai antaa päivityksen asentua automaattisesti, kun suljet craftQTA Appin."
   },
   "app.update-popup.body.download-complete": {
-    "message": "Modrinth App versio {version} on ladattu. Voit käynnistää sovelluksen uudelleen päivittääksesi heti tai antaa päivityksen asentua automaattisesti, kun suljet Modrinth Appin."
+    "message": "craftQTA App versio {version} on ladattu. Voit käynnistää sovelluksen uudelleen päivittääksesi heti tai antaa päivityksen asentua automaattisesti, kun suljet craftQTA Appin."
   },
   "app.update-popup.body.linux": {
-    "message": "Modrinth App versio {version} on saatavilla. Käytä paketinhallintasi ja päivitä käyttääksesi uusimpia ominaisuuksia ja korjauksia!"
+    "message": "craftQTA App versio {version} on saatavilla. Käytä paketinhallintasi ja päivitä käyttääksesi uusimpia ominaisuuksia ja korjauksia!"
   },
   "app.update-popup.body.metered": {
-    "message": "Modrinth App versio {version} on nyt saatavilla! Koska käytät käytön mukaan laskutettavaa verkkoa, emme ladannut sitä automaattisesti."
+    "message": "craftQTA App versio {version} on nyt saatavilla! Koska käytät käytön mukaan laskutettavaa verkkoa, emme ladannut sitä automaattisesti."
   },
   "app.update-popup.changelog": {
     "message": "Muutosloki"
@@ -282,10 +282,10 @@
     "message": "Se ei voi olla eri kuin heidän Minecraft-käyttäjänimi!"
   },
   "friends.add-friend.username.placeholder": {
-    "message": "Syötä Modrinth-käyttäjätunnus..."
+    "message": "Syötä craftQTA-käyttäjätunnus..."
   },
   "friends.add-friend.username.title": {
-    "message": "Mikä on ystäväsi Modrinth-käyttäjänimi?"
+    "message": "Mikä on ystäväsi craftQTA-käyttäjänimi?"
   },
   "friends.add-friends-to-share": {
     "message": "<link>Lisää kavereita</link> nähdäksesi mitä he pelaavat!"
@@ -327,7 +327,7 @@
     "message": "{title} - {count}"
   },
   "friends.sign-in-to-add-friends": {
-    "message": "<link>Kirjaudu Modrinth-tilille</link> lisätäksesi ystäviä ja nähdäksesi mitä he pelaavat!"
+    "message": "<link>Kirjaudu craftQTA-tilille</link> lisätäksesi ystäviä ja nähdäksesi mitä he pelaavat!"
   },
   "instance.add-server.add-and-play": {
     "message": "Lisää ja pelaa"

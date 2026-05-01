@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import {
+	BoxIcon,
 	CoffeeIcon,
 	GameIcon,
 	GaugeIcon,
 	LanguagesIcon,
-	ModrinthIcon,
 	PaintbrushIcon,
+	ServerStackIcon,
 	SettingsIcon,
 	ShieldIcon,
 	ToggleRightIcon,
@@ -24,6 +25,7 @@ import { platform as getOsPlatform, version as getOsVersion } from '@tauri-apps/
 import { ref, watch } from 'vue'
 
 import AppearanceSettings from '@/components/ui/settings/AppearanceSettings.vue'
+import CraftySettings from '@/components/ui/settings/CraftySettings.vue'
 import DefaultInstanceSettings from '@/components/ui/settings/DefaultInstanceSettings.vue'
 import FeatureFlagSettings from '@/components/ui/settings/FeatureFlagSettings.vue'
 import JavaSettings from '@/components/ui/settings/JavaSettings.vue'
@@ -70,6 +72,14 @@ const tabs = [
 		}),
 		icon: ShieldIcon,
 		content: PrivacySettings,
+	},
+	{
+		name: defineMessage({
+			id: 'app.settings.tabs.crafty',
+			defaultMessage: 'Crafty servers',
+		}),
+		icon: ServerStackIcon,
+		content: CraftySettings,
 	},
 	{
 		name: defineMessage({
@@ -175,10 +185,10 @@ const messages = defineMessages({
 						}"
 						@click="devModeCount"
 					>
-						<ModrinthIcon class="w-6 h-6" />
+						<BoxIcon class="w-6 h-6" />
 					</button>
 					<div class="max-w-[200px]">
-						<p class="m-0">Modrinth App {{ version }}</p>
+						<p class="m-0">craftQTA App {{ version }}</p>
 						<p class="m-0">
 							<span v-if="osPlatform === 'macos'">macOS</span>
 							<span v-else class="capitalize">{{ osPlatform }}</span>

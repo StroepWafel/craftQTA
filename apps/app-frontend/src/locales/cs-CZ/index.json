@@ -228,10 +228,10 @@
     "message": "Může být jiné než jejich Minecraft jméno!"
   },
   "friends.add-friend.username.placeholder": {
-    "message": "Zadejte uživatelské jméno Modrinth..."
+    "message": "Zadejte uživatelské jméno craftQTA..."
   },
   "friends.add-friend.username.title": {
-    "message": "Jak se váš kamarád jmenuje na Modrinthu?"
+    "message": "Jak se váš kamarád jmenuje v craftQTA?"
   },
   "friends.add-friends-to-share": {
     "message": "<link>Přidejte si přátelé</link> a podívejte se, co hrají!"
@@ -273,7 +273,7 @@
     "message": "{title} - {count}"
   },
   "friends.sign-in-to-add-friends": {
-    "message": "<link>Přihlašte se ke svému Modrinth účtu</link>, abyste jsi přidali přátele a uviděli co hrají!"
+    "message": "<link>Přihlašte se ke svému craftQTA účtu</link>, abyste jsi přidali přátele a uviděli co hrají!"
   },
   "instance.add-server.add-and-play": {
     "message": "Přidat a hrát"

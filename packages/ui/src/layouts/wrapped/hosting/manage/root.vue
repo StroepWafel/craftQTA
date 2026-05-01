@@ -59,7 +59,7 @@
 	>
 		<ErrorInformationCard
 			title="An error occured."
-			description="Please contact Modrinth Support."
+			description="Please contact craftQTA Support."
 			:icon="TransferIcon"
 			icon-color="orange"
 			:error-details="generalErrorDetails"
@@ -80,7 +80,7 @@
 			<template #description>
 				<div class="text-md space-y-4">
 					<p class="leading-[170%] text-secondary">
-						Your server's node, where your Modrinth Server is physically hosted, is not accessible
+						Your server's node, where your craftQTA server is physically hosted, is not accessible
 						at the moment. We are working to resolve the issue as quickly as possible.
 					</p>
 					<p class="leading-[170%] text-secondary">
@@ -88,7 +88,7 @@
 						the issue is resolved.
 					</p>
 					<p class="leading-[170%] text-secondary">
-						If reloading does not work initially, please contact Modrinth Support via the chat
+						If reloading does not work initially, please contact craftQTA Support via the chat
 						bubble in the bottom right corner and we'll be happy to help.
 					</p>
 				</div>
@@ -214,8 +214,8 @@
 										An invalid loader or Minecraft version was specified and could not be installed.
 										<ul class="m-0 mt-4 p-0 pl-4">
 											<li>
-												If this version of Minecraft was released recently, please check if Modrinth
-												Hosting supports it.
+												If this version of Minecraft was released recently, please check if craftQTA
+												Servers supports it.
 											</li>
 											<li>
 												If you've installed a modpack, it may have been packaged incorrectly or may
@@ -226,7 +226,7 @@
 												You can change the loader by clicking the "Change Loader" button.
 											</li>
 											<li>
-												If you're stuck, please contact Modrinth Support with the information below:
+												If you're stuck, please contact craftQTA Support with the information below:
 											</li>
 										</ul>
 										<ButtonStyled>
@@ -239,16 +239,16 @@
 									</div>
 									<div v-if="errorMessage.toLocaleLowerCase() === 'internal error'">
 										An internal error occurred while installing your server. Don't fret — try
-										reinstalling your server, and if the problem persists, please contact Modrinth
-										support with your server's debug information.
+										reinstalling your server, and if the problem persists, please contact craftQTA
+										Support with your server's debug information.
 									</div>
 									<div
 										v-if="errorMessage.toLocaleLowerCase() === 'this version is not yet supported'"
 									>
-										An error occurred while installing your server because Modrinth Hosting does not
+										An error occurred while installing your server because craftQTA Servers does not
 										support the version of Minecraft or the loader you specified. Try reinstalling
 										your server with a different version or loader, and if the problem persists,
-										please contact Modrinth Support with your server's debug information.
+										please contact craftQTA Support with your server's debug information.
 									</div>
 
 									<div
@@ -1109,12 +1109,12 @@ const nodeUnavailableDetails = computed(() => [
 
 const suspendedDescription = computed(() => {
 	if (serverData.value?.suspension_reason === 'cancelled') {
-		return 'Your subscription has been cancelled.\nContact Modrinth Support if you believe this is an error.'
+		return 'Your subscription has been cancelled.\nContact craftQTA Support if you believe this is an error.'
 	}
 	if (serverData.value?.suspension_reason) {
-		return `Your server has been suspended: ${serverData.value.suspension_reason}\nContact Modrinth Support if you believe this is an error.`
+		return `Your server has been suspended: ${serverData.value.suspension_reason}\nContact craftQTA Support if you believe this is an error.`
 	}
-	return 'Your server has been suspended.\nContact Modrinth Support if you believe this is an error.'
+	return 'Your server has been suspended.\nContact craftQTA Support if you believe this is an error.'
 })
 
 const generalErrorDetails = computed(() => [

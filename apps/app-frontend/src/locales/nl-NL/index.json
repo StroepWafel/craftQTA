@@ -165,7 +165,7 @@
     "message": "Vereist modpack"
   },
   "app.modal.install-to-play.server-requires-mods": {
-    "message": "Deze server vereist mods om te spelen. Klik op Installeer om de vereiste bestanden van Modrinth in te stellen, en start direct in de server."
+    "message": "Deze server vereist mods om te spelen. Klik op Installeer om de vereiste bestanden van craftQTA in te stellen, en start direct in de server."
   },
   "app.modal.install-to-play.shared-instance": {
     "message": "Gedeelde instantie"
@@ -210,16 +210,16 @@
     "message": "Bronnenbeheer"
   },
   "app.update-popup.body": {
-    "message": "Modrinth App v{version} is klaar om geïnstalleerd te worden! Herlaad om nu te updaten, of automatisch wanneer je de Modrinth App afsluit."
+    "message": "craftQTA App v{version} is klaar om geïnstalleerd te worden! Herlaad om nu te updaten, of automatisch wanneer je de craftQTA App afsluit."
   },
   "app.update-popup.body.download-complete": {
-    "message": "Modrinth App v{version} is klaar met downloaden. Herlaad om nu te updaten, of automatisch wanneer je de Modrinth App afsluit."
+    "message": "craftQTA App v{version} is klaar met downloaden. Herlaad om nu te updaten, of automatisch wanneer je de craftQTA App afsluit."
   },
   "app.update-popup.body.linux": {
-    "message": "Modrinth App v{version} is beschikbaar. Gebruik je pakketbeheerder om te updaten voor de laatste functies en oplossingen!"
+    "message": "craftQTA App v{version} is beschikbaar. Gebruik je pakketbeheerder om te updaten voor de laatste functies en oplossingen!"
   },
   "app.update-popup.body.metered": {
-    "message": "Modrinth App v{version} is nu beschikbaar! Omdat je nu op een netwerk met datalimiet zit, is de download niet automatisch gestart."
+    "message": "craftQTA App v{version} is nu beschikbaar! Omdat je nu op een netwerk met datalimiet zit, is de download niet automatisch gestart."
   },
   "app.update-popup.changelog": {
     "message": "Wijzigingen"
@@ -285,10 +285,10 @@
     "message": "Het kan verschillen van hun Minecraft gebruikersnaam!"
   },
   "friends.add-friend.username.placeholder": {
-    "message": "Voer Modrinth gebruikersnaam in..."
+    "message": "Voer craftQTA gebruikersnaam in..."
   },
   "friends.add-friend.username.title": {
-    "message": "Wat is de Modrinth gebruikersnaam van jouw vriend?"
+    "message": "Wat is de craftQTA gebruikersnaam van jouw vriend?"
   },
   "friends.add-friends-to-share": {
     "message": "<link>Voeg vrienden toe</link> om te zien wat zij spelen!"
@@ -330,7 +330,7 @@
     "message": "{title} - {count}"
   },
   "friends.sign-in-to-add-friends": {
-    "message": "<link>Log in op een Modrinth account</link> om vrienden toe te voegen en zien wat zij spelen!"
+    "message": "<link>Log in op een craftQTA account</link> om vrienden toe te voegen en zien wat zij spelen!"
   },
   "instance.add-server.add-and-play": {
     "message": "Toevoegen en spelen"

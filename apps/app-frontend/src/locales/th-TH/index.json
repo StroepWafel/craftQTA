@@ -141,7 +141,7 @@
     "message": "มอดแพ็กที่จำเป็น"
   },
   "app.modal.install-to-play.server-requires-mods": {
-    "message": "เซิร์ฟเวอร์นี้จำเป็นต้องใช้มอดเพื่อเข้าเล่น คลิกติดตั้ง เพื่อตั้งค่าไฟล์ที่จำเป็นจาก Modrinth จากนั้นจึงจะเข้าสู่เซิร์ฟเวอร์โดยตรงได้"
+    "message": "เซิร์ฟเวอร์นี้จำเป็นต้องใช้มอดเพื่อเข้าเล่น คลิกติดตั้ง เพื่อตั้งค่าไฟล์ที่จำเป็นจาก craftQTA จากนั้นจึงจะเข้าสู่เซิร์ฟเวอร์โดยตรงได้"
   },
   "app.modal.install-to-play.shared-instance": {
     "message": "อินสแตนซ์ที่ใช้ร่วมกัน"
@@ -186,16 +186,16 @@
     "message": "การจัดการทรัพยากร"
   },
   "app.update-popup.body": {
-    "message": "แอฟ Modrinth v{version} พร้อมสำหรับการติดตั้งแล้ว! รีโหลดแอปเพื่ออัปเดต หรือ อัปเดตอัตโนมัติเมื่อคุณปิดแอฟ Modrinth"
+    "message": "แอฟ craftQTA v{version} พร้อมสำหรับการติดตั้งแล้ว! รีโหลดแอปเพื่ออัปเดต หรือ อัปเดตอัตโนมัติเมื่อคุณปิดแอฟ craftQTA"
   },
   "app.update-popup.body.download-complete": {
-    "message": "แอฟ Modrinth v{version} ดาวน์โหลดเสร็จแล้ว รีโหลดแอปเพื่ออัปเดต หรือ อัปเดตอัตโนมัติเมื่อคุณปิดแอฟ Modrinth"
+    "message": "แอฟ craftQTA v{version} ดาวน์โหลดเสร็จแล้ว รีโหลดแอปเพื่ออัปเดต หรือ อัปเดตอัตโนมัติเมื่อคุณปิดแอฟ craftQTA"
   },
   "app.update-popup.body.linux": {
-    "message": "Modrinth App v{version} พร้อมให้อัปเดตแล้ว โปรดใช้ตัวจัดการแพ็กเกจ ของคุณเพื่ออัปเดตฟีเจอร์ใหม่และตัวแก้ไขล่าสุด!"
+    "message": "craftQTA App v{version} พร้อมให้อัปเดตแล้ว โปรดใช้ตัวจัดการแพ็กเกจ ของคุณเพื่ออัปเดตฟีเจอร์ใหม่และตัวแก้ไขล่าสุด!"
   },
   "app.update-popup.body.metered": {
-    "message": "แอฟ Modrinth v{version} พร้อมแล้ว! เนื่องจากคุณเปิดโหมดจำกัดปริมาณข้อมูล เราจึงไม่ได้อัปเดตอัตโนมัติ"
+    "message": "แอฟ craftQTA v{version} พร้อมแล้ว! เนื่องจากคุณเปิดโหมดจำกัดปริมาณข้อมูล เราจึงไม่ได้อัปเดตอัตโนมัติ"
   },
   "app.update-popup.download": {
     "message": "ดาวโหลด ({size})"
@@ -249,10 +249,10 @@
     "message": "อาจจะแตกต่างกับชื่อใน Minecraft"
   },
   "friends.add-friend.username.placeholder": {
-    "message": "ใส่ชื่อบน Modrinth"
+    "message": "ใส่ชื่อบน craftQTA"
   },
   "friends.add-friend.username.title": {
-    "message": "เพื่อนของคุณมีชื่อบน Modrinth ว่าอะไร"
+    "message": "เพื่อนของคุณมีชื่อบน craftQTA ว่าอะไร"
   },
   "friends.add-friends-to-share": {
     "message": "<link>เพิ่มเพื่อน</link> เพื่อเห็นว่าพวกเขากำลังเล่นอะไรอยู่!"
@@ -294,7 +294,7 @@
     "message": "{title} - {count}"
   },
   "friends.sign-in-to-add-friends": {
-    "message": "<link>ล็อกอินเข้าบัญชี Modrinth</link> เพื่อเพิ่มเพื่อนและเห็นว่าพวกเขากำลังเล่นอะไรอยู่!"
+    "message": "<link>ล็อกอินเข้าบัญชี craftQTA</link> เพื่อเพิ่มเพื่อนและเห็นว่าพวกเขากำลังเล่นอะไรอยู่!"
   },
   "instance.add-server.add-and-play": {
     "message": "เพิ่มและเล่นทันที"

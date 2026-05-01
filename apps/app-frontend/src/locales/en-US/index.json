@@ -42,7 +42,7 @@
     "message": "Advanced rendering"
   },
   "app.appearance-settings.color-theme.description": {
-    "message": "Select your preferred color theme for Modrinth App."
+    "message": "Select your preferred color theme for craftQTA App."
   },
   "app.appearance-settings.color-theme.title": {
     "message": "Color theme"
@@ -93,7 +93,7 @@
     "message": "Toggle sidebar"
   },
   "app.appearance-settings.unknown-pack-warning.description": {
-    "message": "If you attempt to install a Modrinth Pack file (.mrpack) that isn't hosted on Modrinth, we'll make sure you understand the risks before installing it."
+    "message": "If you attempt to install a craftQTA Pack file (.mrpack) that isn't hosted on craftQTA, we'll make sure you understand the risks before installing it."
   },
   "app.appearance-settings.unknown-pack-warning.title": {
     "message": "Warn me before installing unknown modpacks"
@@ -282,7 +282,7 @@
     "message": "Required modpack"
   },
   "app.modal.install-to-play.server-requires-mods": {
-    "message": "This server requires mods to play. Click Install to set up the required files from Modrinth, then launch directly into the server."
+    "message": "This server requires mods to play. Click Install to set up the required files from craftQTA, then launch directly into the server."
   },
   "app.modal.install-to-play.shared-instance": {
     "message": "Shared instance"
@@ -327,16 +327,16 @@
     "message": "Resource management"
   },
   "app.update-popup.body": {
-    "message": "Modrinth App v{version} is ready to install! Reload to update now, or automatically when you close Modrinth App."
+    "message": "craftQTA App v{version} is ready to install! Reload to update now, or automatically when you close craftQTA App."
   },
   "app.update-popup.body.download-complete": {
-    "message": "Modrinth App v{version} has finished downloading. Reload to update now, or automatically when you close Modrinth App."
+    "message": "craftQTA App v{version} has finished downloading. Reload to update now, or automatically when you close craftQTA App."
   },
   "app.update-popup.body.linux": {
-    "message": "Modrinth App v{version} is available. Use your package manager to update for the latest features and fixes!"
+    "message": "craftQTA App v{version} is available. Use your package manager to update for the latest features and fixes!"
   },
   "app.update-popup.body.metered": {
-    "message": "Modrinth App v{version} is available now! Since you're on a metered network, we didn't automatically download it."
+    "message": "craftQTA App v{version} is available now! Since you're on a metered network, we didn't automatically download it."
   },
   "app.update-popup.changelog": {
     "message": "Changelog"
@@ -402,10 +402,10 @@
     "message": "It may be different from their Minecraft username!"
   },
   "friends.add-friend.username.placeholder": {
-    "message": "Enter Modrinth username..."
+    "message": "Enter craftQTA username..."
   },
   "friends.add-friend.username.title": {
-    "message": "What's your friend's Modrinth username?"
+    "message": "What's your friend's craftQTA username?"
   },
   "friends.add-friends-to-share": {
     "message": "<link>Add friends</link> to see what they're playing!"
@@ -447,7 +447,7 @@
     "message": "{title} - {count}"
   },
   "friends.sign-in-to-add-friends": {
-    "message": "<link>Sign in to a Modrinth account</link> to add friends and see what they're playing!"
+    "message": "<link>Sign in to a craftQTA account</link> to add friends and see what they're playing!"
   },
   "instance.add-server.add-and-play": {
     "message": "Add and play"
@@ -717,7 +717,7 @@
     "message": "Loader is provided by the server"
   },
   "unknown-pack-warning-modal.body": {
-    "message": "A file is only reviewed if it’s uploaded to Modrinth, regardless of its file format (including .mrpack)."
+    "message": "A file is only reviewed if it’s uploaded to craftQTA, regardless of its file format (including .mrpack)."
   },
   "unknown-pack-warning-modal.dont-show-again": {
     "message": "Don't show this warning again"
@@ -732,9 +732,318 @@
     "message": "Malware is often distributed through modpack files by sharing them on platforms like Discord."
   },
   "unknown-pack-warning-modal.warning.body": {
-    "message": "We couldn't find this file on Modrinth. We strongly recommend only installing files from sources you trust."
+    "message": "We couldn't find this file on craftQTA. We strongly recommend only installing files from sources you trust."
   },
   "unknown-pack-warning-modal.warning.title": {
     "message": "Unknown file warning"
-  }
+  },
+  "app.crafty-servers.page-title": { "message": "{product} Servers" },
+  "app.crafty-servers.powered-by": { "message": "Powered by Crafty Controller at " },
+  "app.crafty-servers.sign-in-title": { "message": "Sign in to Crafty" },
+  "app.crafty-servers.sign-in-blurb": {
+    "message": "Use your Crafty Controller username and password. The session token stays on this device."
+  },
+  "app.crafty-servers.mfa-blurb": {
+    "message": "If MFA is enabled on your Crafty account, choose an MFA method below and enter your code."
+  },
+  "app.crafty-servers.username": { "message": "Username" },
+  "app.crafty-servers.password": { "message": "Password" },
+  "app.crafty-servers.mfa-label": { "message": "MFA (optional)" },
+  "app.crafty-servers.mfa-none": { "message": "None" },
+  "app.crafty-servers.mfa-totp": { "message": "Authenticator app" },
+  "app.crafty-servers.mfa-backup": { "message": "Backup code" },
+  "app.crafty-servers.totp": { "message": "Authenticator code" },
+  "app.crafty-servers.backup-code": { "message": "Backup code" },
+  "app.crafty-servers.sign-in": { "message": "Sign in" },
+  "app.crafty-servers.sign-out": { "message": "Sign out Crafty" },
+  "app.crafty-servers.open-panel": { "message": "Open Crafty panel" },
+  "app.crafty-servers.search-ph": { "message": "Search {count} servers…" },
+  "app.crafty-servers.retry-load": { "message": "Retry" },
+  "app.crafty-servers.sum-total": { "message": "Servers" },
+  "app.crafty-servers.sum-online": { "message": "Online" },
+  "app.crafty-servers.sum-off-crashed": { "message": "Offline / crashed" },
+  "app.crafty-servers.sum-players": { "message": "Players (sum)" },
+  "app.crafty-servers.stats-partial": { "message": "Some stats could not be loaded for every server." },
+  "app.crafty-servers.status-online": { "message": "Online" },
+  "app.crafty-servers.status-offline": { "message": "Offline" },
+  "app.crafty-servers.status-crashed": { "message": "Crashed" },
+  "app.crafty-servers.status-unknown": { "message": "Unknown" },
+  "app.crafty-servers.players-short": { "message": "Players" },
+  "app.crafty-servers.mem-short": { "message": "RAM %" },
+  "app.crafty-servers.act-start": { "message": "Start" },
+  "app.crafty-servers.act-stop": { "message": "Stop" },
+  "app.crafty-servers.act-restart": { "message": "Restart" },
+  "app.crafty-servers.act-kill": { "message": "Kill" },
+  "app.crafty-servers.kill-title": { "message": "Force-kill this server?" },
+  "app.crafty-servers.kill-desc": {
+    "message": "Immediately terminates the process on the host. Unsaved data may be lost."
+  },
+  "app.crafty-servers.no-results": { "message": "No servers match your search." },
+  "app.crafty-servers.back-list": { "message": "← Back to servers" },
+  "app.crafty-servers.signed-out-detail": {
+    "message": "You are signed out of Crafty. Go back to the server list and sign in."
+  },
+  "app.crafty-servers.tab-overview": { "message": "Overview" },
+  "app.crafty-servers.tab-console": { "message": "Console" },
+  "app.crafty-servers.tab-logs": { "message": "Logs" },
+  "app.crafty-servers.tab-players": { "message": "Players" },
+  "app.crafty-servers.players-intro": {
+    "message": "Manage Minecraft players using the same mechanisms as Crafty: live counts from GET …/stats, server commands via POST …/stdin, and whitelist / ops / bans by reading JSON next to your world unless your host uses another layout."
+  },
+  "app.crafty-servers.players-java-proxy-note": {
+    "message": "Commands here target a Java Dedicated Server style console. Proxies (Velocity, etc.) use different slash commands—in that case rely on Crafty's full panel or your proxy console."
+  },
+  "app.crafty-servers.players-loading-stats": { "message": "Loading live stats…" },
+  "app.crafty-servers.players-online-count": { "message": "Reported online (stats):" },
+  "app.crafty-servers.players-online-title": { "message": "Online now" },
+  "app.crafty-servers.players-online-empty": { "message": "Nobody is listed as connected in Crafty stats, or the stats format omits players." },
+  "app.crafty-servers.players-target-title": { "message": "By player name" },
+  "app.crafty-servers.players-target-hint": {
+    "message": "Runs plain console commands (no leading slash). Names with spaces are quoted automatically."
+  },
+  "app.crafty-servers.players-placeholder": { "message": "Player name" },
+  "app.crafty-servers.players-ban-reason-ph": {
+    "message": "Ban reason (optional; default applies if empty)"
+  },
+  "app.crafty-servers.players-act-kick": { "message": "Kick" },
+  "app.crafty-servers.players-act-ban": { "message": "Ban" },
+  "app.crafty-servers.players-act-op": { "message": "OP" },
+  "app.crafty-servers.players-act-deop": { "message": "De-op" },
+  "app.crafty-servers.players-act-whitelist-add": { "message": "Whitelist add" },
+  "app.crafty-servers.players-act-whitelist-remove": { "message": "Whitelist remove" },
+  "app.crafty-servers.players-act-whitelist-reload": { "message": "Whitelist reload" },
+  "app.crafty-servers.players-act-pardon": { "message": "Pardon (unban)" },
+  "app.crafty-servers.players-refresh-lists": { "message": "Refresh saved lists" },
+  "app.crafty-servers.players-loading-lists": { "message": "Loading whitelist / ops / bans from disk…" },
+  "app.crafty-servers.players-whitelist-title": { "message": "Whitelist (saved file)" },
+  "app.crafty-servers.players-ops-title": { "message": "Operators (saved file)" },
+  "app.crafty-servers.players-banned-title": { "message": "Banned players (saved file)" },
+  "app.crafty-servers.players-file-path": { "message": "Loaded from {path}" },
+  "app.crafty-servers.players-file-missing": {
+    "message": "Could not read a known whitelist / ops / banned-players JSON path via the Crafty API."
+  },
+  "app.crafty-servers.players-list-empty-whitelist": { "message": "No whitelist entries parsed (empty file or inaccessible)." },
+  "app.crafty-servers.players-list-empty-ops": { "message": "No operators parsed (empty file or inaccessible)." },
+  "app.crafty-servers.players-list-empty-banned": { "message": "No banned players parsed (empty file or inaccessible)." },
+  "app.crafty-servers.players-col-name": { "message": "Name" },
+  "app.crafty-servers.players-col-uuid": { "message": "UUID" },
+  "app.crafty-servers.players-col-level": { "message": "Level" },
+  "app.crafty-servers.players-reason-prefix": { "message": "Reason:" },
+  "app.crafty-servers.players-expires-prefix": { "message": "Expires:" },
+  "app.crafty-servers.players-kick-title": { "message": "Kick player?" },
+  "app.crafty-servers.players-kick-desc": { "message": "Kick {name} via server console?" },
+  "app.crafty-servers.players-ban-title": { "message": "Ban player?" },
+  "app.crafty-servers.players-ban-desc": {
+    "message": "Ban {name} with the configured reason via server console?"
+  },
+  "app.crafty-servers.players-ban-default-reason": { "message": "Banned from app" },
+  "app.crafty-servers.players-deop-title": { "message": "Remove operator?" },
+  "app.crafty-servers.players-deop-desc": { "message": "De-op {name} via server console?" },
+  "app.crafty-servers.players-pardon-title": { "message": "Pardon (unban) player?" },
+  "app.crafty-servers.players-pardon-desc": { "message": "Remove {name} from banned-players via pardon?" },
+  "app.crafty-servers.players-stdin-failed": { "message": "Crafty declined the console command." },
+  "app.crafty-servers.players-run-command": { "message": "Send command" },
+  "app.crafty-servers.tab-files": { "message": "Files" },
+  "app.crafty-servers.tab-backups": { "message": "Backups" },
+  "app.crafty-servers.tab-schedules": { "message": "Schedules" },
+  "app.crafty-servers.tab-metrics": { "message": "Metrics" },
+  "app.crafty-servers.tab-webhooks": { "message": "Webhooks" },
+  "app.crafty-servers.detail-advanced-hint": {
+    "message": "Schedules, backups, and file tools are available below. For every advanced panel feature, use "
+  },
+  "app.crafty-servers.detail-primary-actions": { "message": "Primary actions" },
+  "app.crafty-servers.detail-extra-actions": { "message": "Danger / maintenance" },
+  "app.crafty-servers.stats-access-hint": {
+    "message": " — Stats need server access rights on your Crafty account. Full dashboard remains in the Crafty panel."
+  },
+  "app.crafty-servers.files-intro": {
+    "message": "Browse and edit server files through Crafty's API (POST /servers/…/files). Binary or oversized files cannot be edited here."
+  },
+  "app.crafty-servers.files-root": { "message": "Root" },
+  "app.crafty-servers.new-folder": { "message": "New folder name" },
+  "app.crafty-servers.new-empty-file": { "message": "New empty file" },
+  "app.crafty-servers.create-folder": { "message": "Create folder" },
+  "app.crafty-servers.create-file": { "message": "Create file" },
+  "app.crafty-servers.file-list": { "message": "Directory" },
+  "app.crafty-servers.editor": { "message": "Editor" },
+  "app.crafty-servers.pick-file": { "message": "Select a file in the tree to edit." },
+  "app.crafty-servers.loading-files": { "message": "Loading directory…" },
+  "app.crafty-servers.empty-dir": { "message": "(empty folder)" },
+  "app.crafty-servers.loading-file": { "message": "Loading file…" },
+  "app.crafty-servers.save-file": { "message": "Save" },
+  "app.crafty-servers.delete-file": { "message": "Delete" },
+  "app.crafty-servers.files-binary-hint": {
+    "message": "This file is treated as binary or too large—open Crafty panel to download or inspect it safely."
+  },
+  "app.crafty-servers.files-panel-error": { "message": "Could not read this path." },
+  "app.crafty-servers.save-failed": { "message": "Could not save file" },
+  "app.crafty-servers.delete-failed": { "message": "Could not delete path" },
+  "app.crafty-servers.decompress-archive": { "message": "Decompress archive" },
+  "app.crafty-servers.relative-path": { "message": "path/to/archive.zip" },
+  "app.crafty-servers.unpack": { "message": "Unpack" },
+  "app.crafty-servers.backups-intro": {
+    "message": "List and restore Crafty-managed backups via the backup API."
+  },
+  "app.crafty-servers.loading-backups": { "message": "Loading backups…" },
+  "app.crafty-servers.restore-backup": { "message": "Restore…" },
+  "app.crafty-servers.delete-backup": { "message": "Delete" },
+  "app.crafty-servers.no-backups": { "message": "No backups returned for this server." },
+  "app.crafty-servers.backup-unknown": { "message": "Backup" },
+  "app.crafty-servers.raw-json": { "message": "Raw API response (debug)" },
+  "app.crafty-servers.restore-title": { "message": "Restore backup?" },
+  "app.crafty-servers.restore-filename-help": {
+    "message": "Enter the backup filename Crafty expects (usually from the Crafty dashboard)."
+  },
+  "app.crafty-servers.restore-proceed": { "message": "Restore" },
+  "app.crafty-servers.delete-backup-title": { "message": "Delete this backup permanently?" },
+  "app.crafty-servers.tasks-intro": {
+    "message": "Cron / interval jobs through Crafty's /tasks API. Many Crafty versions do not implement GET …/tasks, so schedules are fetched by numeric ID after you create them here (IDs are remembered in this browser)."
+  },
+  "app.crafty-servers.new-task": { "message": "New scheduled task" },
+  "app.crafty-servers.task-name": { "message": "Name" },
+  "app.crafty-servers.task-action": { "message": "Action" },
+  "app.crafty-servers.task-command": { "message": "Command (for \"command\")" },
+  "app.crafty-servers.task-interval-value": { "message": "Interval value" },
+  "app.crafty-servers.task-interval-type": { "message": "Interval type" },
+  "app.crafty-servers.task-cron": { "message": "Cron (optional)" },
+  "app.crafty-servers.task-cron-ph": { "message": "0 3 * * *" },
+  "app.crafty-servers.create-task": { "message": "Create task" },
+  "app.crafty-servers.loading-tasks": { "message": "Loading tasks…" },
+  "app.crafty-servers.run-task": { "message": "Run now" },
+  "app.crafty-servers.delete-task": { "message": "Delete" },
+  "app.crafty-servers.no-tasks": { "message": "None yet — schedules you create here will show up automatically." },
+  "app.crafty-servers.delete-task-title": { "message": "Delete this task?" },
+  "app.crafty-servers.metrics-intro": {
+    "message": "Resource and health samples over time from Crafty (GET …/history). Charts appear when Crafty exposes two or more data points."
+  },
+  "app.crafty-servers.metrics-chart-empty": {
+    "message": "Charts need at least two history samples with numeric metrics. Let the server run longer and refresh, or check the raw payload below."
+  },
+  "app.crafty-servers.metrics-series.cpu": { "message": "CPU usage" },
+  "app.crafty-servers.metrics-series.cpu_percent": { "message": "CPU %" },
+  "app.crafty-servers.metrics-series.cpu_usage": { "message": "CPU usage" },
+  "app.crafty-servers.metrics-series.mem_percent": { "message": "Memory %" },
+  "app.crafty-servers.metrics-series.mem_usage_percent": { "message": "Memory %" },
+  "app.crafty-servers.metrics-series.memory_percent": { "message": "Memory %" },
+  "app.crafty-servers.metrics-series.players": { "message": "Players" },
+  "app.crafty-servers.metrics-series.online": { "message": "Players online" },
+  "app.crafty-servers.metrics-series.max_players": { "message": "Max players" },
+  "app.crafty-servers.metrics-series.tps": { "message": "TPS" },
+  "app.crafty-servers.metrics-series.mspt": { "message": "MSPT" },
+  "app.crafty-servers.loading-history": { "message": "Loading history…" },
+  "app.crafty-servers.delete-proceed": { "message": "Delete" },
+  "app.crafty-servers.delete-path-title": { "message": "Delete this path?" },
+  "app.crafty-servers.loading-server": { "message": "Loading server…" },
+  "app.crafty-servers.loading-stats": { "message": "Loading stats…" },
+  "app.crafty-servers.cpu-short": { "message": "CPU" },
+  "app.crafty-servers.live-status": { "message": "Live status" },
+  "app.crafty-servers.stat-running": { "message": "Running" },
+  "app.crafty-servers.stat-cpu": { "message": "CPU" },
+  "app.crafty-servers.stat-mem": { "message": "Memory" },
+  "app.crafty-servers.stat-mem-percent": { "message": "Memory %" },
+  "app.crafty-servers.stat-players": { "message": "Players" },
+  "app.crafty-servers.stat-version": { "message": "Version" },
+  "app.crafty-servers.stat-world": { "message": "World" },
+  "app.crafty-servers.stat-world-size": { "message": "World size" },
+  "app.crafty-servers.stat-started": { "message": "Started" },
+  "app.crafty-servers.dash-placeholder": { "message": "—" },
+  "app.crafty-servers.online-players": { "message": "Online players" },
+  "app.crafty-servers.detail-display-name": { "message": "Display name" },
+  "app.crafty-servers.rename-hint": {
+    "message": "Renames the server in Crafty (PATCH /servers)."
+  },
+  "app.crafty-servers.save-name": { "message": "Save name" },
+  "app.crafty-servers.detail-config": { "message": "Configuration" },
+  "app.crafty-servers.detail-access": { "message": "Access" },
+  "app.crafty-servers.cfg-type": { "message": "Server type" },
+  "app.crafty-servers.cfg-path": { "message": "Data path" },
+  "app.crafty-servers.cfg-backup-path": { "message": "Backup path" },
+  "app.crafty-servers.cfg-executable": { "message": "Executable" },
+  "app.crafty-servers.cfg-execution-command": { "message": "Launch command" },
+  "app.crafty-servers.cfg-log-path": { "message": "Log path" },
+  "app.crafty-servers.cfg-stop-command": { "message": "Stop command" },
+  "app.crafty-servers.cfg-auto-start": { "message": "Auto-start" },
+  "app.crafty-servers.cfg-auto-start-delay": { "message": "Auto-start delay (s)" },
+  "app.crafty-servers.cfg-crash-detection": { "message": "Crash detection" },
+  "app.crafty-servers.cfg-logs-delete-after": { "message": "Logs delete after (days)" },
+  "app.crafty-servers.cfg-executable-update-url": { "message": "Executable update URL" },
+  "app.crafty-servers.bool-yes": { "message": "Yes" },
+  "app.crafty-servers.bool-no": { "message": "No" },
+  "app.crafty-servers.users-loading": { "message": "Loading user IDs…" },
+  "app.crafty-servers.users-error": {
+    "message": "Could not load Crafty user IDs for this server (needs user/roles permissions)."
+  },
+  "app.crafty-servers.danger-zone": { "message": "Danger zone" },
+  "app.crafty-servers.danger-zone-body": {
+    "message": "Deletes the server from Crafty (not only this app). Worlds on disk follow Crafty’s behavior."
+  },
+  "app.crafty-servers.act-delete-server": { "message": "Delete server…" },
+  "app.crafty-servers.act-backup": { "message": "Backup" },
+  "app.crafty-servers.act-clone": { "message": "Clone server" },
+  "app.crafty-servers.act-update-exe": { "message": "Update executable" },
+  "app.crafty-servers.console-title": { "message": "Console command" },
+  "app.crafty-servers.console-hint": {
+    "message": "Sends raw stdin (do not type a slash before commands unless your server expects it)."
+  },
+  "app.crafty-servers.console-live-hint": {
+    "message": "Stdout is polled every few seconds (same data as the Logs tab, without file options)."
+  },
+  "app.crafty-servers.console-pause-tail": { "message": "Pause live tail" },
+  "app.crafty-servers.console-auto-scroll": { "message": "Auto-scroll to newest lines" },
+  "app.crafty-servers.console-ph": {
+    "message": "say Hello from {product}"
+  },
+  "app.crafty-servers.send": { "message": "Send" },
+  "app.crafty-servers.log-from-file": { "message": "Read log file (latest.log) instead of stdout" },
+  "app.crafty-servers.log-raw": { "message": "Keep ANSI / raw stream" },
+  "app.crafty-servers.log-pause": { "message": "Pause auto-refresh" },
+  "app.crafty-servers.log-refresh": { "message": "Refresh now" },
+  "app.crafty-servers.webhooks-intro": {
+    "message": "Discord and status webhooks exposed by Crafty’s API. Triggers are comma-separated event names (for example server_start)."
+  },
+  "app.crafty-servers.loading-webhooks": { "message": "Loading webhooks…" },
+  "app.crafty-servers.webhook-type-trigger": {
+    "message": "Type: {type} · Trigger: {trigger}"
+  },
+  "app.crafty-servers.enabled": { "message": "Enabled" },
+  "app.crafty-servers.webhook-remove": { "message": "Remove" },
+  "app.crafty-servers.new-webhook": { "message": "New webhook" },
+  "app.crafty-servers.webhook-ph-name": { "message": "Name" },
+  "app.crafty-servers.webhook-ph-type": { "message": "Type (e.g. Discord)" },
+  "app.crafty-servers.webhook-ph-url": { "message": "https://…" },
+  "app.crafty-servers.webhook-ph-triggers": { "message": "Triggers (comma-separated)" },
+  "app.crafty-servers.webhook-ph-body": { "message": "Body / template (optional)" },
+  "app.crafty-servers.create-webhook": { "message": "Create webhook" },
+  "app.crafty-servers.webhook-fallback": { "message": "Webhook {id}" },
+  "app.crafty-servers.clone-title": { "message": "Clone this server?" },
+  "app.crafty-servers.clone-desc": {
+    "message": "Crafty will duplicate this server entry on the controller. Disk usage and clone time depend on your host."
+  },
+  "app.crafty-servers.clone-proceed": { "message": "Clone" },
+  "app.crafty-servers.update-exe-title": { "message": "Update executable?" },
+  "app.crafty-servers.update-exe-desc": {
+    "message": "Runs Crafty’s update_executable action for this server (same as the panel). Ensure backups exist."
+  },
+  "app.crafty-servers.update-proceed": { "message": "Update" },
+  "app.crafty-servers.delete-server-title": { "message": "Delete server?" },
+  "app.crafty-servers.delete-server-desc": {
+    "message": "This removes the server from Crafty. Type the server name to confirm."
+  },
+  "app.crafty-servers.delete-server-proceed": { "message": "Delete permanently" },
+  "app.crafty-servers.remove-webhook-title": { "message": "Remove webhook?" },
+  "app.crafty-servers.remove-webhook-desc": {
+    "message": "This webhook will stop receiving Crafty events."
+  },
+  "app.crafty-servers.remove-webhook-proceed": { "message": "Remove" },
+  "app.crafty-servers.err-load-server": { "message": "Could not load server" },
+  "app.crafty-servers.err-load-stats": { "message": "Could not load stats" },
+  "app.crafty-servers.err-load-users": { "message": "Could not load server users" },
+  "app.crafty-servers.err-load-webhooks": { "message": "Could not load webhooks" },
+  "app.crafty-servers.log-empty": { "message": "(empty)" },
+  "app.crafty-servers.log-load-failed": { "message": "(could not load logs)" },
+  "app.crafty-servers.action-failed": { "message": "Action failed" },
+  "app.crafty-servers.err-delete-server": { "message": "Could not delete server" },
+  "app.crafty-servers.err-rename-server": { "message": "Could not rename server" },
+  "app.crafty-servers.webhook-name-url-required": { "message": "Name and URL are required." },
+  "app.crafty-servers.err-create-webhook": { "message": "Could not create webhook" }
 }

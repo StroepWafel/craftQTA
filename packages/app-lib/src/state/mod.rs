@@ -51,6 +51,7 @@ pub use self::mr_auth::*;
 mod legacy_converter;
 
 pub mod attached_world_data;
+pub(crate) mod profile_shared_world_links;
 pub mod server_join_log;
 
 // Global state
@@ -78,7 +79,7 @@ pub struct State {
     // because creating the state object is fallible (e.g. database missing),
     // but we rely on the app identifier to create the state (data dir).
     //
-    // /// App identifier string (like com.modrinth.ModrinthApp)
+    // /// App identifier string (matches Tauri `identifier`, e.g. craftQTA → %AppData%/craftQTA)
     // pub app_identifier: String,
     /// Friends socket
     pub friends_socket: FriendsSocket,

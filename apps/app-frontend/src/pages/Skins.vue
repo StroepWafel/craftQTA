@@ -431,7 +431,7 @@ await Promise.all([loadCapes(), loadSkins(), loadCurrentUser()])
 		>
 			<img
 				:src="ExcitedRinthbot"
-				alt="Excited Modrinth Bot"
+				alt="Excited craftQTA bot"
 				class="absolute -top-28 right-8 md:right-20 h-28 w-auto"
 			/>
 			<div
@@ -451,7 +451,7 @@ await Promise.all([loadCapes(), loadSkins(), loadCurrentUser()])
 				<h1 class="text-3xl font-extrabold m-0">Please sign-in</h1>
 				<p class="text-lg m-0">
 					Please sign into your Minecraft account to use the skin management features of the
-					Modrinth app.
+					craftQTA app.
 				</p>
 				<ButtonStyled v-show="accountsCard" color="brand" :disabled="accountsCard.loginDisabled">
 					<button :disabled="accountsCard.loginDisabled" @click="login">

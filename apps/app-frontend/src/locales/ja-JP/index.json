@@ -165,7 +165,7 @@
     "message": "必須のModパック"
   },
   "app.modal.install-to-play.server-requires-mods": {
-    "message": "このサーバーをプレイするにはModが必要です。インストールをクリックしてModrinthから必要なファイルを設定し、サーバーに接続してください。"
+    "message": "このサーバーをプレイするにはModが必要です。インストールをクリックしてcraftQTAから必要なファイルを設定し、サーバーに接続してください。"
   },
   "app.modal.install-to-play.shared-instance": {
     "message": "共有インスタンス"
@@ -210,16 +210,16 @@
     "message": "リソース管理"
   },
   "app.update-popup.body": {
-    "message": "Modrinth App v{version} のインストール準備が整いました！今すぐ更新するには再読み込みするか、Modrinth Appを閉じる際に自動更新されます。"
+    "message": "craftQTA App v{version} のインストール準備が整いました！今すぐ更新するには再読み込みするか、craftQTA Appを閉じる際に自動更新されます。"
   },
   "app.update-popup.body.download-complete": {
-    "message": "Modrinth App v{version} のダウンロードが完了しました。今すぐ更新するには再読み込みするか、Modrinth Appを閉じる際に自動更新されます。"
+    "message": "craftQTA App v{version} のダウンロードが完了しました。今すぐ更新するには再読み込みするか、craftQTA Appを閉じる際に自動更新されます。"
   },
   "app.update-popup.body.linux": {
-    "message": "Modrinth App v{version} が利用可能です。最新の機能と修正プログラムを入手するには、パッケージマネージャーを使用して更新してください！"
+    "message": "craftQTA App v{version} が利用可能です。最新の機能と修正プログラムを入手するには、パッケージマネージャーを使用して更新してください！"
   },
   "app.update-popup.body.metered": {
-    "message": "Modrinth App v{version} が利用可能になりました！お使いのネットワークが従量制のため、自動ダウンロードは行っておりません。"
+    "message": "craftQTA App v{version} が利用可能になりました！お使いのネットワークが従量制のため、自動ダウンロードは行っておりません。"
   },
   "app.update-popup.changelog": {
     "message": "更新履歴"
@@ -285,10 +285,10 @@
     "message": "これはMinecraftユーザー名とは異なる可能性があります！"
   },
   "friends.add-friend.username.placeholder": {
-    "message": "Modrinthユーザー名を入力…"
+    "message": "craftQTAユーザー名を入力…"
   },
   "friends.add-friend.username.title": {
-    "message": "あなたのフレンドのModrinthユーザー名は何ですか？"
+    "message": "あなたのフレンドのcraftQTAユーザー名は何ですか？"
   },
   "friends.add-friends-to-share": {
     "message": "<link>友達を追加</link>して、彼らが何をしているか見てみよう！"
@@ -330,7 +330,7 @@
     "message": "{title} - {count}"
   },
   "friends.sign-in-to-add-friends": {
-    "message": "<link>Modrinthアカウントにサインイン</link>して友達を追加し、彼らがプレイしているゲームをチェックしよう！"
+    "message": "<link>craftQTAアカウントにサインイン</link>して友達を追加し、彼らがプレイしているゲームをチェックしよう！"
   },
   "instance.add-server.add-and-play": {
     "message": "追加してプレイ"
